@@ -3,7 +3,7 @@ import React from 'react';
 function App() {
   return (
     <>
-      <h1>Akshara Vijaya ⚔️</h1>
+      <h1 className='text-center bg-sky-500 text-lg'>Akshara Vijaya ⚔️</h1>
     </>
   );
 }
