@@ -15,6 +15,9 @@ Currently, two official plugins are available:
 ```
 
 ## How to run
+```bash
+-
+```
 
 ### List Pages
 - [ ] Register
