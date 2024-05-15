@@ -29,8 +29,9 @@ npm install
 
 ### List Pages
 ##### Front-End
-- [X] SignUp (M. Gilang) In Progress
-- [X] SignIn (M. Gilang) In Progress
+- [x] SignUp (M. Gilang) In Progress
+- [x] SignIn (M. Gilang) In Progress
+- [x] Forgot Account () In Progress
 - [ ] Home Page
 - [ ] Product Page
 - [ ] Details Product Page
