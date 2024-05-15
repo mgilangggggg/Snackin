@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import SignIn from "./Pages/Auth/SignIn";
 
 function App() {
   return (
     <>
-      <h1 className='text-center bg-sky-500 text-lg'>Akshara Vijaya ⚔️</h1>
+      <SignIn />
     </>
   );
 }
