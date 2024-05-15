@@ -1,13 +1,5 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-# Snackin
+# <h1 align="center">Snackin</h1>
 
 ## How to install
 ```bash
@@ -20,12 +12,35 @@ Currently, two official plugins are available:
 ```
 
 ### List Pages
-- [ ] Register
-- [ ] Login
-- [ ] Landing Page
-- [ ] Add Card
-- [ ] Details Produk
-- [ ] Checkout
+##### Front-End
+- [ ] SignUp
+- [ ] SignIn
+- [ ] Home Page
+- [ ] Product Page
+- [ ] Details Product Page
+- [ ] Add Cart Page
+- [ ] Checkout Page
+- [ ] Order Details Page
+- [ ] Completed Order Page
+- [ ] Store Profile Page
 - [ ] My Profile
 - [ ] About Us
-- [ ] Up Comming
+- [ ] Dashboard Admin (CRUD)
+  
+##### Back-End
+- [ ] Database
+
+### Our Team
+
+<h4 align="center">©️ Copyright 2024 by Akshara Vijaya</h4>
+
+![Our Team](https://github.com/mgilangggggg/Snackin/assets/96936728/bdfb0a84-5bb1-498d-b2c9-551a98989c5c)
+
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
