@@ -1,14 +1,30 @@
 
 # <h1 align="center">Snackin</h1>
 
+Link Website: https://snackin-testing.vercel.app
+
+###############################################
+
+## Configuration & Information
+```bash
+```
+
+
 ## How to install
 ```bash
--
+npm install
+```
+
+```bash
+
 ```
 
 ## How to run
 ```bash
--
+1. Clone poject dari repositori https://github.com/mgilangggggg/Snackin
+3. Setelah Clone masuk ke direktori Snackin lalu install jalankan perintah "npm install" di terminal
+2. Lalu jalankan perintah "npm run dev" untuk menjalankan aplikasi
+3. 
 ```
 
 ### List Pages
