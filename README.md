@@ -13,8 +13,8 @@
 
 ### List Pages
 ##### Front-End
-- [ ] SignUp
-- [ ] SignIn
+- [X] SignUp (M. Gilang) In Progress
+- [X] SignIn (M. Gilang) In Progress
 - [ ] Home Page
 - [ ] Product Page
 - [ ] Details Product Page
