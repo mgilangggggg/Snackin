@@ -1,89 +1,109 @@
-import React, { useState } from "react";
+import React from "react";
 
 const SignUp = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Lakukan validasi atau kirim data ke backend di sini
-    console.log(formData);
-  };
-
   return (
-    <div className="max-w-md mx-auto mt-8">
-      <h2 className="text-2xl font-bold mb-4">Daftar</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="username" className="block mb-1">
-            Username
-          </label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935]"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935]"
-          />
-        </div>
-        <div>
-          <label htmlFor="password" className="block mb-1">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935]"
-          />
-        </div>
-        <div>
-          <label htmlFor="confirmPassword" className="block mb-1">
-            Konfirmasi Password
-          </label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935]"
-          />
-        </div>
-        <div>
-          <button
-            type="submit"
-            className="w-full bg-[#E53935] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#FF8A65] focus:outline-none focus:bg-blue-600"
-          >
-            Daftar
+    <div className="w-full h-screen flex items-start">
+      {/* Image */}
+      <div className="relative w-1/2 h-full flex flex-col">
+        <img
+          src="/src/Assets/SignUp.png"
+          alt="SignIn"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Logo */}
+      <div className="w-1/2 h-full bg-[#e8d5d5] flex flex-col p-5 justify-between items-center">
+        <img
+          src="/src/Assets/Snackin.png"
+          alt="Logo"
+          className="max-w-[400px] w-28"
+        />
+        <div className="w-full flex flex-col max-w-[400px]">
+          <div className="w-full flex flex-col mb-2">
+            <h3 className="text-3xl font-semibold mb-2">Daftar!</h3>
+            <p className="text-base mb-2">
+              Belum memiliki akun? Silahkan Daftar.
+            </p>
+          </div>
+
+          {/* Input field for username, email, no.telepon and password */}
+          <div className="w-full flex flex-col">
+            <form className="space-y-6">
+              <input
+                type="tel"
+                placeholder="No. Telp"
+                id="phoneNumber"
+                name="phoneNumber"
+                required
+                className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935]"
+              />
+
+              <input
+                type="email"
+                placeholder="Email"
+                id="email"
+                name="email"
+                required
+                className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935] my-4"
+              />
+
+              <input
+                type="password"
+                placeholder="Password"
+                id="password"
+                name="password"
+                required
+                className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935]"
+              />
+            </form>
+          </div>
+
+          {/* SignUp button */}
+          <div className="w-full flex flex-col my-4">
+            <button
+              type="submit"
+              className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-semibold text-white hover:bg-[#FF8A65] my-2"
+            >
+              Daftar
+            </button>
+          </div>
+
+          {/* Horizontal line and 'or' text */}
+          <div className="w-full flex items-center justify-center relative py-2">
+            <div className="w-full h-[1px] bg-black"></div>
+            <p className="text-sm absolute text-black/80 bg-[#e8d5d5]">atau</p>
+          </div>
+
+          {/* Login with Facebook button */}
+          <button className="w-full bg-[#f5f5f5] border border-gray-300 rounded-md p-2 text-center flex items-center justify-center font-semibold text-[#060606] hover:bg-[#1877f2] hover:text-white my-2 ">
+            <img
+              src="src\Assets\Icon-Facebook.png"
+              alt="Icon-Facebook"
+              className="w-5 mr-3"
+            />
+            Daftar dengan Facebook
           </button>
+
+          {/* Login with Google button */}
+          <button className="w-full bg-[#f5f5f5] border border-gray-300 rounded-md p-2 text-center flex items-center justify-center font-semibold text-[#060606] hover:bg-[#262626] hover:text-white my-2 ">
+            <img
+              src="src\Assets\Icon-Google.png"
+              alt="Icon-Google"
+              className="w-5 mr-3"
+            />
+            Daftar dengan Google
+          </button>
+
+          {/* SignUp link */}
+          <div className="w-full flex items-center justify-center my-4">
+            <p className="text-sm font-normal text-[#060606]">
+              Sudah memiliki akun?
+              <span className="font-semibold cursor-pointer"> Login</span>
+            </p>
+          </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

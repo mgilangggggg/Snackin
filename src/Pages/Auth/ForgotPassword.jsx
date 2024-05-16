@@ -1,46 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ForgotPassword = () => {
-  const [email, setEmail] = useState("");
-
-  const handleChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Lakukan validasi atau kirim email reset password ke backend di sini
-    console.log(email);
-  };
-
+function ForgotPassword() {
   return (
-    <div className="max-w-md mx-auto mt-8">
-      <h2 className="text-2xl font-bold mb-4">Lupa Password</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="email" className="block mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935]"
-          />
-        </div>
-        <div>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-[#e8d5d5]">
+      <div className="bg-white shadow-md rounded-lg px-10 pb-8 w-full max-w-md">
+        <div className="text-3xl font-semibold mb-2 py-5">Lupa Password</div>
+        {/* <div className="text-center font-bold text-2xl py-5">Lupa Password</div> */}
+        <form className="space-y-6">
+          <div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935] my-4"
+            />
+          </div>
           <button
             type="submit"
-            className="w-full bg-[#E53935] text-white py-2 px-4 rounded-md hover:bg-[#FF8A65]"
+            className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-semibold text-white hover:bg-[#FF8A65] my-2"
           >
-            Kirim Reset Email
+            Kirim
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
-};
+}
 
 export default ForgotPassword;
