@@ -51,8 +51,10 @@ const SignIn = () => {
           {/* Checkbox for 'Remember Me' and 'Forgot Password?' link */}
           <div className="w-full flex items-center justify-between">
             <div className="w-full flex items-center">
-              <input type="checkbox" className="w-4 h-4 mr-2" />
-              <p className="text-sm">Ingat Saya</p>
+              <label className="flex items-center gap-x-2 accent-[#E53935]">
+                <input type="checkbox" className="w-4 h-4" />
+                Ingat Saya
+              </label>
             </div>
 
             <p className="text-sm font-medium whitespace-nowrap cursor-pointer">
