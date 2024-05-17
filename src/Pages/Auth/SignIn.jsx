@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -57,19 +58,23 @@ const SignIn = () => {
               </label>
             </div>
 
-            <p className="text-sm font-medium whitespace-nowrap cursor-pointer">
+            <Link
+              to="/Forgot"
+              className="text-sm font-medium whitespace-nowrap cursor-pointer"
+            >
               Lupa Password?
-            </p>
+            </Link>
           </div>
 
           {/* SignIn button */}
           <div className="w-full flex flex-col my-4">
-            <button
+            <Link
+              to="/"
               type="submit"
               className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-semibold text-white hover:bg-[#FF8A65] my-2"
             >
               Masuk
-            </button>
+            </Link>
           </div>
 
           {/* Horizontal line and 'or' text */}
@@ -102,7 +107,9 @@ const SignIn = () => {
           <div className="w-full flex items-center justify-center my-4">
             <p className="text-sm font-normal text-[#060606]">
               Belum memiliki akun?
-              <span className="font-semibold cursor-pointer"> Daftar</span>
+              <Link to="/SignUp" className="font-semibold cursor-pointer p-2">
+                Daftar
+              </Link>
             </p>
           </div>
         </div>

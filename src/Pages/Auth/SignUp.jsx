@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
@@ -61,12 +62,13 @@ const SignUp = () => {
 
           {/* SignUp button */}
           <div className="w-full flex flex-col my-4">
-            <button
+            <Link
+              to="/SignIn"
               type="submit"
               className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-semibold text-white hover:bg-[#FF8A65] my-2"
             >
               Daftar
-            </button>
+            </Link>
           </div>
 
           {/* Horizontal line and 'or' text */}
@@ -99,7 +101,9 @@ const SignUp = () => {
           <div className="w-full flex items-center justify-center my-4">
             <p className="text-sm font-normal text-[#060606]">
               Sudah memiliki akun?
-              <span className="font-semibold cursor-pointer"> Login</span>
+              <Link to="/SignIn" className="font-semibold cursor-pointer p-2">
+                Login
+              </Link>
             </p>
           </div>
         </div>
