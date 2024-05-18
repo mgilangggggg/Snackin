@@ -32,7 +32,7 @@ npm install
 - [x] SignUp (M. Gilang)
 - [x] SignIn (M. Gilang)
 - [x] Forgot Account (M. Gilang)
-- [ ] Home Page
+- [ ] Home Page (M. Gilang) In Progress ⏳
 - [ ] Product Page
 - [ ] Details Product Page
 - [ ] Add Cart Page
