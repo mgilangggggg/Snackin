@@ -5,7 +5,6 @@ function ForgotPassword() {
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-[#e8d5d5]">
       <div className="bg-white shadow-md rounded-lg px-10 pb-8 w-full max-w-md">
         <div className="text-3xl font-semibold mb-2 py-5">Lupa Password</div>
-        {/* <div className="text-center font-bold text-2xl py-5">Lupa Password</div> */}
         <form className="space-y-6">
           <div>
             <input

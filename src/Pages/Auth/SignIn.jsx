@@ -7,16 +7,15 @@ const SignIn = () => {
       {/* Image */}
       <div className="relative w-1/2 h-full flex flex-col">
         <img
-          src="/src/Assets/SignIn.png"
+          src="/src/Assets/Auth/SignIn.png"
           alt="SignIn"
           className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Logo */}
       <div className="w-1/2 h-full bg-[#e8d5d5] flex flex-col p-10 justify-between items-center">
         <img
-          src="/src/Assets/Snackin.png"
+          src="/src/Assets/Logo/Snackin.png"
           alt="Logo"
           className="max-w-[400px] mx-auto w-28"
         />
@@ -86,7 +85,7 @@ const SignIn = () => {
           {/* Login with Facebook button */}
           <button className="w-full bg-[#f5f5f5] border border-gray-300 rounded-md p-2 text-center flex items-center justify-center font-semibold text-[#060606] hover:bg-[#1877f2] hover:text-white my-2 ">
             <img
-              src="src\Assets\Icon-Facebook.png"
+              src="src/Assets/Icon/Icon-Facebook.png"
               alt="Icon-Facebook"
               className="w-5 mr-3"
             />
@@ -96,7 +95,7 @@ const SignIn = () => {
           {/* Login with Google button */}
           <button className="w-full bg-[#f5f5f5] border border-gray-300 rounded-md p-2 text-center flex items-center justify-center font-semibold text-[#060606] hover:bg-[#262626] hover:text-white my-2 ">
             <img
-              src="src\Assets\Icon-Google.png"
+              src="src/Assets/Icon/Icon-Google.png"
               alt="Icon-Google"
               className="w-5 mr-3"
             />
