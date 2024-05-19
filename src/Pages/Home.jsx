@@ -1,90 +1,176 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../Assets/Snackin.png";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import Carousel from "../Components/Carousel";
 
 const Home = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
-
-  // set toggle Menu
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  useEffect(() => () => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.addEventListener("scroll", handleScroll);
-    };
-  });
-
-  // navitems array
-  const navItems = [
-    { Link: "Beranda", path: "home" },
-    { Link: "Produk", path: "product" },
-    { Link: "Tentang", path: "about" },
+  const products = [
+    {
+      imageSrc: "/src/Assets/BasrengPedas.png", // ganti dengan path gambar yang benar
+      title: "Basreng Pedas",
+      price: "Rp. 15.000",
+      description: "200 pcs terjual dalam sehari",
+    },
+    // Anda bisa menambahkan produk lain di sini
   ];
 
   return (
-    <header className="w-full bg-white md:bg-transparent fixed top-0 left-0 right-0">
-      <nav className="py-4 lg:px-14 px-4">
-        <div className="flex justify-between items-center text-base gap-8">
-          <a href="">
+    <>
+      <Navbar />
+      <Carousel />
+
+      {/* Kategori Produk */}
+      <div className="font-medium text-lg px-20">
+        <h1>Kategori Produk</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="max-w-xs rounded-lg overflow-hidden shadow-lg border border-gray-200 p-4 bg-white">
             <img
-              src={logo}
-              alt="Snackin"
-              className="w-20 inline-block items-center"
+              src="src/Assets/Product/Kerupuk-Kulit.png"
+              alt=""
+              className="w-full h-48 object-cover rounded-lg"
             />
-          </a>
-
-          {/* Nav items */}
-          <ul className="md:flex space-x-12 hidden">
-            {navItems.map(({ Link, path }) => (
-              <Link
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-100}
-                key={path}
-                className="block text-base text-gray-900 hover:text-[#E53935] first:font-medium"
-              >
-                {Link}
-              </Link>
-            ))}
-          </ul>
-
-          {/* Button SignIn and SignUp */}
-          <div className="space-x-12 hidden lg:flex items-center">
-            {/* <div className="w-[241.59px] h-[38px] bg-stone-50 rounded-[19px] border border-[#FF8A65]" /> */}
-            <div className="w-[241.59px] h-[38px] relative">
-              <div className="w-[241.59px] h-[38px] left-0 top-0 absolute bg-[#E53935] rounded-[19px] border border-white" />
-              <div className="w-[79px] left-[48.49px] top-[6px] absolute text-white text-lg font-medium font-['Poppins']">
-                Cari
-              </div>
-              <img
-                className="w-[19px] h-[17px] left-[15.73px] top-[12px] absolute"
-                src=""
-              />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">Keripik & Kerupuk</h3>
             </div>
-            <img className="w-[38.97px] h-[45px]" src="" />
-            <Link
-              to="/SignIn"
-              className="bg-[#E53935] text-white py-2 px-4 rounded-full hover:bg-[#FF8A65]"
-            >
-              Masuk
-            </Link>
+          </div>
+          <div className="max-w-xs rounded-lg overflow-hidden shadow-lg border border-gray-200 p-4 bg-white">
+            <img
+              src="src/Assets/Product/Sale-Lilit.png"
+              alt=""
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">Olahan Pisang</h3>
+            </div>
+          </div>
+          <div className="max-w-xs rounded-lg overflow-hidden shadow-lg border border-gray-200 p-4 bg-white">
+            <img
+              src="src/Assets/Product/Kacang-Sangrai.png"
+              alt=""
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">Kacang - Kacangan</h3>
+            </div>
+          </div>
+          <div className="max-w-xs rounded-lg overflow-hidden shadow-lg border border-gray-200 p-4 bg-white">
+            <img
+              src="src/Assets/Product/Nastar-Nanas.png"
+              alt=""
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">Kue Basah</h3>
+            </div>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+
+      {/* Produk Baru */}
+      <div className="font-medium text-lg px-20 pt-10">
+        <h1>Produk Baru</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="max-w-xs rounded-lg overflow-hidden shadow-lg border border-gray-200 p-4 bg-white">
+            <img
+              src="src/Assets/Product/Basreng.png"
+              alt=""
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">Basreng Pedas</h3>
+              <p className="text-gray-700 text-lg">Rp. 12.000</p>
+              <p className="text-gray-500 text-sm mt-2">
+                200 pcs terjual dalam sehari
+              </p>
+            </div>
+          </div>
+          <div className="max-w-xs rounded-lg overflow-hidden shadow-lg border border-gray-200 p-4 bg-white">
+            <img
+              src="src/Assets/Product/Gemlong-Pedas.png"
+              alt=""
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">Gemlong Pedas</h3>
+              <p className="text-gray-700 text-lg">Rp. 15.000</p>
+              <p className="text-gray-500 text-sm mt-2">
+                230 pcs terjual dalam sehari
+              </p>
+            </div>
+          </div>
+          <div className="max-w-xs rounded-lg overflow-hidden shadow-lg border border-gray-200 p-4 bg-white">
+            <img
+              src="src/Assets/Product/Singkong-Original.png"
+              alt=""
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">
+                Keripik Singkong Original
+              </h3>
+              <p className="text-gray-700 text-lg">Rp. 16.000</p>
+              <p className="text-gray-500 text-sm mt-2">
+                100 pcs terjual dalam sehari
+              </p>
+            </div>
+          </div>
+          <div className="max-w-xs rounded-lg overflow-hidden shadow-lg border border-gray-200 p-4 bg-white">
+            <img
+              src="src/Assets/Product/Donat.png"
+              alt=""
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">Donat</h3>
+              <p className="text-gray-700 text-lg">Rp. 10.000</p>
+              <p className="text-gray-500 text-sm mt-2">
+                85 pcs terjual dalam sehari
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="font-medium text-lg px-20 pt-10">
+        {/* Pilihan Toko */}
+        <h1>Pilihan Toko</h1>
+      </div>
+      <div className="flex flex-row space-x-14 items-center justify-center p-8">
+        <div className="flex flex-col items-center">
+          <img
+            src="src/Assets/Toko/Gumilang-Snack.png"
+            alt=""
+            className="w-44"
+          />
+          <p className="p-2">Gumilang Snack</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <img
+            src="src/Assets/Toko/Grosir-Jajanan.png"
+            alt=""
+            className="w-44"
+          />
+          <p className="p-2">Grosir Jajanan Murah</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <img src="src/Assets/Toko/Maicih.png" alt="" className="w-44" />
+          <p className="p-2">Maicih</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <img src="src/Assets/Toko/Cemilan-Mini.png" alt="" className="w-44" />
+          <p className="p-2">Cemilan Mini</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <img src="src/Assets/Toko/Sajodo-Snack.png" alt="" className="w-44" />
+          <p className="p-2">Sajodo Snack</p>
+        </div>
+      </div>
+      <div className="">
+        <Footer />
+      </div>
+    </>
   );
 };
 
