@@ -1,4 +1,5 @@
 import React from "react";
+import Index from "./Pages/Index";
 import Home from "./Pages/Home";
 import SignIn from "./Pages/Auth/SignIn";
 import SignUp from "./Pages/Auth/SignUp";
@@ -11,7 +12,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* HOME */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Index />} />
+          <Route path="/home" element={<Home />} />
 
           {/* AUTH */}
           <Route path="/SignIn" element={<SignIn />} />
