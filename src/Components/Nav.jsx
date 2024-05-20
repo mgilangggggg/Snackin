@@ -47,7 +47,7 @@ const Nav = () => {
                 Beranda
               </Link>
               <Link
-                to="/404"
+                to="/product"
                 spy={true}
                 smooth={true}
                 duration={500}
@@ -56,7 +56,7 @@ const Nav = () => {
                 Produk
               </Link>
               <Link
-                to="/404"
+                to="/about"
                 spy={true}
                 smooth={true}
                 duration={500}
