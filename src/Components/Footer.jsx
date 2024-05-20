@@ -7,7 +7,7 @@ const Footer = () => {
     <div className=" bg-[#E53935] text-white mt-8 md:mt-0">
       <div className="flex flex-col md:flex-row justify-between p-8 md:px-32 px-5">
         <div className=" w-full md:w-1/4">
-          <img src="/src/Assets/Logo/Snackin.png" alt="" className="w-28" />
+          <img src="./Snackin.png" alt="" className="w-28" />
           <p className=" text-sm">Berbagai macam makanan ringan khas daerah.</p>
         </div>
         <div>

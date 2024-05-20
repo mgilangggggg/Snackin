@@ -32,7 +32,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carousel-container w-full  mx-auto py-16">
+    <div className="carousel-container w-full  mx-auto py-16 -z-30">
       <div className="carousel w-full overflow-hidden relative">
         <div className="carousel-inner flex">
           <div
@@ -56,13 +56,13 @@ const Carousel = () => {
       </div>
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white text-[#E53935] p-2 rounded-full m-4"
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white text-[#E53935] hover:bg-gray-100 p-2 rounded-full m-4"
       >
         <FaArrowLeft />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-[#E53935] p-2 rounded-full m-4"
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-[#E53935] hover:bg-gray-100 p-2 rounded-full m-4"
       >
         <FaArrowRight />
       </button>

@@ -4,8 +4,9 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
 
-const Navbar = () => {
+const Nav = () => {
   const [menu, setMenu] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = () => {
     setMenu(!menu);
@@ -13,6 +14,10 @@ const Navbar = () => {
 
   const closeMenu = () => {
     setMenu(false);
+  };
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -69,18 +74,66 @@ const Navbar = () => {
                 <MdOutlineShoppingCart className="size-8 text-white cursor-pointer" />
               </div>
               <div className="text-white">|</div>
-              <Link
-                to="/SignIn"
-                className="w-full text-white border hover:text-[#E53935] hover:bg-white rounded-full px-6 py-1 cursor-pointer"
-              >
-                Masuk
-              </Link>
-              <Link
-                to="/SignUp"
-                className="w-full text-[#E53935] hover:text-white bg-white hover:bg-[#FF8A65] rounded-full px-6 py-1 cursor-pointer"
-              >
-                Daftar
-              </Link>
+              <div className="relative inline-block text-left">
+                <div>
+                  <button
+                    type="button"
+                    className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+                    id="menu-button"
+                    aria-expanded="true"
+                    aria-haspopup="true"
+                    onClick={toggleDropdown}
+                  >
+                    <span>Profile</span>
+                    <svg
+                      className="-mr-1 ml-2 h-5 w-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 3a1 1 0 01.117 1.993L10 5H5a1 1 0 01-.117-1.993L5 3h5zm0 4a1 1 0 01.117 1.993L10 9H3a1 1 0 01-.117-1.993L3 7h7zm0 4a1 1 0 01.117 1.993L10 13H1a1 1 0 01-.117-1.993L1 11h9zm0 4a1 1 0 01.117 1.993L10 17H7a1 1 0 01-.117-1.993L7 15h3z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {isOpen && (
+                  <div
+                    className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="menu-button"
+                  >
+                    <div className="py-1" role="none">
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        role="menuitem"
+                      >
+                        Account settings
+                      </a>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        role="menuitem"
+                      >
+                        Support
+                      </a>
+                      <Link
+                        to="/"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        role="menuitem"
+                      >
+                        Sign out
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
             </nav>
 
             <div className="md:hidden flex items-center">
@@ -150,4 +203,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Nav;
