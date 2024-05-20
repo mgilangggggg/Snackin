@@ -14,11 +14,6 @@ const SignIn = () => {
       </div>
 
       <div className="w-1/2 h-full bg-[#e8d5d5] flex flex-col p-10 justify-between items-center">
-        <img
-          src="./Snackin.png"
-          alt="Logo"
-          className="max-w-[400px] mx-auto w-28"
-        />
         <div className="w-full flex flex-col max-w-[400px]">
           <div className="w-full flex flex-col mb-2">
             <h3 className="text-3xl font-semibold mb-2">Masuk!</h3>

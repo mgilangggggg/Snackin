@@ -132,12 +132,13 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Forum Penjual & Pembeli */}
       <div className=" px-20 pt-10">
         <h1 className="text-lg font-medium text-center py-4">
           Forum Penjual & Pembeli
         </h1>
         <div className="flex justify-center">
-          <div className="w-10/12 h-60 bg-[#E53935] rounded-lg flex items-center justify-between p-4">
+          <div className="w-10/12 h-60 bg-[#E53935] rounded-lg shadow-lg flex items-center justify-between p-4">
             <img
               src="./src/Assets/Use-Customer.png"
               alt=""
