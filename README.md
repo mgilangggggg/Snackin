@@ -32,16 +32,16 @@ npm install
 - [x] SignUp (M. Gilang)
 - [x] SignIn (M. Gilang)
 - [x] Forgot Account (M. Gilang)
-- [ ] Home Page (M. Gilang) In Progress ⏳
-- [ ] Product Page
+- [x] Home Page before and after login (M. Gilang)
+- [ ] Product Page (M. Gilang) In Progress ⏳
 - [ ] Details Product Page
 - [ ] Add Cart Page
 - [ ] Checkout Page
-- [ ] Order Details Page
+- [ ] Order Details Page (Aji) In Progress ⏳
 - [ ] Completed Order Page
 - [ ] Store Profile Page
 - [ ] My Profile
-- [ ] About Us
+- [x] About Us (Aji)
 - [ ] Dashboard Admin (CRUD)
   
 ##### Back-End
