@@ -17,6 +17,7 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Navbar Sebelum Login */}
       <div className="fixed w-full z-50">
         <div>
           <div className="flex flex-row justify-between p-4 md:px-20 px-5 bg-[#E53935] shadow-[0_3px_10px_rgba(0,0,0,0.2)]">
@@ -40,7 +41,7 @@ const Navbar = () => {
                 Beranda
               </Link>
               <Link
-                to="/Product"
+                to="/SignIn"
                 spy={true}
                 smooth={true}
                 duration={500}
@@ -49,7 +50,7 @@ const Navbar = () => {
                 Produk
               </Link>
               <Link
-                to="/About"
+                to="/SignIn"
                 spy={true}
                 smooth={true}
                 duration={500}
@@ -57,7 +58,7 @@ const Navbar = () => {
               >
                 Tentang
               </Link>
-              <div className="flex gap-2 bg-white rounded-full items-center px-3 py-1">
+              <div className="flex gap-2 text-[#E53935] bg-white rounded-full items-center px-3 py-1">
                 <FaSearch />
                 <input
                   type="text"

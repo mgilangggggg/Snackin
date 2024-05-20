@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaSearch, FaUser } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
-import { FaSearch } from "react-icons/fa";
+import { FaCircleUser } from "react-icons/fa6";
 
 const Nav = () => {
   const [menu, setMenu] = useState(false);
@@ -22,6 +23,7 @@ const Nav = () => {
 
   return (
     <>
+      {/* Navbar Setelah Login */}
       <div className="fixed w-full z-50">
         <div>
           <div className="flex flex-row justify-between p-4 md:px-20 px-5 bg-[#E53935] shadow-[0_3px_10px_rgba(0,0,0,0.2)]">
@@ -36,7 +38,7 @@ const Nav = () => {
 
             <nav className="hidden md:flex flex-row items-center text-sm font-medium gap-4">
               <Link
-                to="/"
+                to="/home"
                 spy={true}
                 smooth={true}
                 duration={500}
@@ -45,7 +47,7 @@ const Nav = () => {
                 Beranda
               </Link>
               <Link
-                to="/Product"
+                to="/404"
                 spy={true}
                 smooth={true}
                 duration={500}
@@ -54,7 +56,7 @@ const Nav = () => {
                 Produk
               </Link>
               <Link
-                to="/About"
+                to="/404"
                 spy={true}
                 smooth={true}
                 duration={500}
@@ -62,7 +64,7 @@ const Nav = () => {
               >
                 Tentang
               </Link>
-              <div className="flex gap-2 bg-white rounded-full items-center px-3 py-1">
+              <div className="flex gap-2 bg-white text-[#E53935] rounded-full items-center px-3 py-1">
                 <FaSearch />
                 <input
                   type="text"
@@ -78,26 +80,14 @@ const Nav = () => {
                 <div>
                   <button
                     type="button"
-                    className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
                     id="menu-button"
                     aria-expanded="true"
                     aria-haspopup="true"
                     onClick={toggleDropdown}
                   >
-                    <span>Profile</span>
-                    <svg
-                      className="-mr-1 ml-2 h-5 w-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 3a1 1 0 01.117 1.993L10 5H5a1 1 0 01-.117-1.993L5 3h5zm0 4a1 1 0 01.117 1.993L10 9H3a1 1 0 01-.117-1.993L3 7h7zm0 4a1 1 0 01.117 1.993L10 13H1a1 1 0 01-.117-1.993L1 11h9zm0 4a1 1 0 01.117 1.993L10 17H7a1 1 0 01-.117-1.993L7 15h3z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <div className="flex bg-[#E53935] text-white rounded-full items-center px- py- ">
+                      <FaCircleUser className="size-8" />
+                    </div>
                   </button>
                 </div>
 
@@ -114,21 +104,21 @@ const Nav = () => {
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                       >
-                        Account settings
+                        Profile
                       </a>
                       <a
                         href="#"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                       >
-                        Support
+                        Pengaturan
                       </a>
                       <Link
                         to="/"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                       >
-                        Sign out
+                        Keluar
                       </Link>
                     </div>
                   </div>
