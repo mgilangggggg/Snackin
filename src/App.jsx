@@ -1,6 +1,7 @@
 import React from "react";
 import Main from "./Pages/Main";
 import Home from "./Pages/Home";
+import About from "./Pages/Home";
 import SignIn from "./Pages/Auth/SignIn";
 import SignUp from "./Pages/Auth/SignUp";
 import ForgotPassword from "./Pages/Auth/ForgotPassword";
@@ -15,6 +16,7 @@ function App() {
           {/* HOME */}
           <Route path="/" element={<Main />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
 
           {/* AUTH */}
           <Route path="/SignIn" element={<SignIn />} />
