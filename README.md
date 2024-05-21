@@ -33,12 +33,13 @@ npm install
 - [x] SignIn (M. Gilang)
 - [x] Forgot Account (M. Gilang)
 - [x] Home Page before and after login (M. Gilang)
-- [ ] Product Page (M. Gilang) In Progress ⏳
+- [x] Product Page (M. Gilang)
+- [ ] Product By Category (M. Gilang) In Progress ⏳
 - [ ] Details Product Page
 - [ ] Add Cart Page
 - [ ] Checkout Page
-- [ ] Order Details Page (Aji) In Progress ⏳
-- [ ] Completed Order Page
+- [x] Order Details Page (Aji)
+- [ ] Completed Order Page (Aji) In Progress ⏳
 - [ ] Store Profile Page
 - [ ] My Profile
 - [x] About Us (Aji)
