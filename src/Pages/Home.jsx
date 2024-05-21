@@ -58,6 +58,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       {/* Produk Baru */}
       <div className="font-medium text-lg px-20 pt-10">
         <h1>Produk Baru</h1>
