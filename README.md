@@ -41,7 +41,7 @@ npm install
 - [x] Order Details Page (Aji)
 - [ ] Completed Order Page (Aji) In Progress ⏳
 - [ ] Store Profile Page
-- [ ] My Profile
+- [x] My Profile (Bella)
 - [x] About Us (Aji)
 - [ ] Dashboard Admin (CRUD)
   
