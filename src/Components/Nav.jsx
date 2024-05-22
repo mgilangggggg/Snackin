@@ -72,9 +72,9 @@ const Nav = () => {
                   className="outline-none"
                 />
               </div>
-              <div>
+              <Link to="/cart">
                 <MdOutlineShoppingCart className="size-8 text-white cursor-pointer" />
-              </div>
+              </Link>
               <div className="text-white">|</div>
               <div className="relative inline-block text-left">
                 <div>

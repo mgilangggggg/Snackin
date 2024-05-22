@@ -113,6 +113,15 @@ const OrderDetail = () => {
           </div>
 
           <div>
+            <h3 className="font-bold mb-2">Alamat Pengiriman</h3>
+            <textarea
+              className="w-full p-4 border rounded mb-6"
+              placeholder="Silakan tinggalkan pesan"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div>
             <h3 className="font-bold mb-2">Pesan</h3>
             <textarea
               className="w-full p-4 border rounded mb-6"

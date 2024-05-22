@@ -66,9 +66,9 @@ const Navbar = () => {
                   className="outline-none"
                 />
               </div>
-              <div>
+              <Link to="/SignIn">
                 <MdOutlineShoppingCart className="size-8 text-white cursor-pointer" />
-              </div>
+              </Link>
               <div className="text-white">|</div>
               <Link
                 to="/SignIn"
