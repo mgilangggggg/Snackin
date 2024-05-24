@@ -145,7 +145,7 @@ const Home = () => {
                 mendetail, dan melakukan negosiasi harga dengan lebih leluasa.
               </p>
               <Link
-                to="/forum"
+                to="/404"
                 className="bg-white text-[#E53935] font-medium py-1 px-4 rounded-full hover:bg-gray-100 self-end"
               >
                 <FaArrowRight />

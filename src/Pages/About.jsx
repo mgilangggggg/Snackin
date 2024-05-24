@@ -8,7 +8,7 @@ const About = () => {
       <Nav />
       <main className="p-20">
         <section className="mb-6">
-          <h2 className="text-xl font-bold p-2">Tentang</h2>
+          <h2 className="text-xl font-bold py-4">Tentang</h2>
           <p className="mb-4">
             Snackin adalah sebuah website e-commerce yang berfokus pada
             penjualan produk makanan ringan milik UMKM. Berawal dari kepedulian
@@ -23,7 +23,7 @@ const About = () => {
           <h2 className="text-xl font-bold mb-4">
             UMKM memiliki peran dalam memajukan perekonomian Indonesia
           </h2>
-          <div className="columns-2">
+          <div className="columns-2 py-4">
             <img
               src="src/Assets/About/about1.png"
               alt="UMKM"
@@ -32,7 +32,7 @@ const About = () => {
             <img
               src="src/Assets/About/about2.png"
               alt="UMKM"
-              className="object-fill h-50 w-80"
+              className="object-fill h-60"
             />
           </div>
           <p className="mb-4">

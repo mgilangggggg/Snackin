@@ -100,14 +100,14 @@ const Nav = () => {
                   >
                     <div className="py-1" role="none">
                       <a
-                        href="#"
+                        href="/404"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                       >
                         Profile
                       </a>
                       <a
-                        href="#"
+                        href="/404"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                       >
