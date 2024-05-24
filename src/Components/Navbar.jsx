@@ -66,18 +66,18 @@ const Navbar = () => {
                   className="outline-none"
                 />
               </div>
-              <Link to="/SignIn">
+              <Link to="/signin">
                 <MdOutlineShoppingCart className="size-8 text-white cursor-pointer" />
               </Link>
               <div className="text-white">|</div>
               <Link
-                to="/SignIn"
+                to="/signin"
                 className="w-full text-white border hover:text-[#E53935] hover:bg-white rounded-full px-6 py-1 cursor-pointer"
               >
                 Masuk
               </Link>
               <Link
-                to="/SignUp"
+                to="/signup"
                 className="w-full text-[#E53935] hover:text-white bg-white hover:bg-[#FF8A65] rounded-full px-6 py-1 cursor-pointer"
               >
                 Daftar
