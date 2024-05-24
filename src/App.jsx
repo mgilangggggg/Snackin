@@ -22,9 +22,9 @@ function App() {
           <Route path="/" element={<Main />} />
 
           {/* AUTH */}
-          <Route path="/SignIn" element={<SignIn />} />
-          <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/Forgot" element={<ForgotPassword />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgot" element={<ForgotPassword />} />
 
           {/* NAV LINK */}
           <Route path="/home" element={<Home />} />
