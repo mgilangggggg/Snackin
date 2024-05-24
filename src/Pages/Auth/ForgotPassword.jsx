@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ForgotPassword() {
   return (
@@ -18,12 +19,13 @@ function ForgotPassword() {
               className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935] my-4"
             />
           </div>
-          <button
+          <Link
+            to=""
             type="submit"
-            className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-medium font-poppins text-white hover:bg-[#FF8A65] my-2"
+            className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-medium font-poppins text-white shadow-sm hover:text-[#E53935] hover:bg-gray-100 my-2"
           >
             Kirim
-          </button>
+          </Link>
         </form>
       </div>
     </div>

@@ -67,7 +67,7 @@ const SignIn = () => {
             <Link
               to="/home"
               type="submit"
-              className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-white hover:bg-[#FF8A65] my-2"
+              className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-white shadow-sm hover:text-[#E53935] hover:bg-gray-100 my-2"
             >
               Masuk
             </Link>
