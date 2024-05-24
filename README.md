@@ -29,8 +29,8 @@ npm install
 
 ### List Pages
 ##### Front-End
-  [x] Routing (All Everyone)
-  [x] Setup a React project (M. Gilang)
+- [x] Routing (All Everyone)
+- [x] Setup a React project (M. Gilang)
 - [x] SignUp (M. Gilang)
 - [x] SignIn (M. Gilang)
 - [x] Forgot Account (M. Gilang)
