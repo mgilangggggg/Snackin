@@ -29,12 +29,12 @@ npm install
 
 ### List Pages
 ##### Front-End
-- [x] Routing (All Everyone)
 - [x] Setup a React project (M. Gilang)
-- [x] SignUp (M. Gilang)
-- [x] SignIn (M. Gilang)
-- [x] Forgot Account (M. Gilang)
-- [x] Home Page main (M. Gilang)
+- [x] Routing (All Everyone)
+- [x] Home Page: Navbar, Carousel, CategoryProduct, NewProduct, Forum In Progress ⏳, StoreChoise, Footer (M. Gilang)
+- [x] Authentication: SignIn, SignUp, Reset (M. Gilang)
+- [x] 404 Pages (M. Gilang)
+- [x] User Home Page: UserNavbar, Carousel, CategoryProduct, NewProduct, Forum In Progress ⏳, StoreChoise, Footer (M. Gilang)
 - [x] Product Page (M. Gilang)
 - [ ] Product By Category (M. Gilang) In Progress ⏳
 - [ ] Details Product Page
