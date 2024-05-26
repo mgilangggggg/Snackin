@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../Components/Nav";
+import Nav from "../Components/UserNavbar";
 import Footer from "../Components/Footer";
 
 const Forum = () => {

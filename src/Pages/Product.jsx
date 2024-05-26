@@ -1,9 +1,9 @@
 import React from "react";
-import Nav from "../Components/Nav";
-import Footer from "../Components/Footer";
+import Nav from "../Components/UserNavbar";
 import { Link } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
 import Rating from "../Components/Rating";
+import UserFooter from "../Components/UserFooter";
 
 const Product = () => {
   const categories = [
@@ -355,7 +355,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <UserFooter />
     </>
   );
 };

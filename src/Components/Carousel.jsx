@@ -4,16 +4,16 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 const Carousel = () => {
   const categories = [
     {
-      imageUrl: "src/Assets/Carousel/1.png",
+      imageUrl: "./Carousel/1.png",
     },
     {
-      imageUrl: "src/Assets/Carousel/2.png",
+      imageUrl: "./Carousel/2.png",
     },
     {
-      imageUrl: "src/Assets/Carousel/3.png",
+      imageUrl: "./Carousel/3.png",
     },
     {
-      imageUrl: "src/Assets/Carousel/4.png",
+      imageUrl: "./Carousel/4.png",
     },
   ];
 

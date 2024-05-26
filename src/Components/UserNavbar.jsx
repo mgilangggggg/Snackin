@@ -1,15 +1,24 @@
 import React, { useState } from "react";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaUserCircle } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
 
-const Navbar = () => {
+const UserNavbar = () => {
   const [menu, setMenu] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = () => {
     setMenu(!menu);
+  };
+
+  const closeMenu = () => {
+    setMenu(false);
+  };
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -20,10 +29,10 @@ const Navbar = () => {
           <Logo />
           {/* End Logo */}
 
-          {/* Navbar*/}
+          {/* UserNavbar*/}
           <nav className="hidden md:flex flex-row items-center font-Poppins text-base  gap-4">
             <Link
-              to="/"
+              to="/home"
               spy={true}
               smooth={true}
               duration={500}
@@ -33,7 +42,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to="/signin"
+              to="/product"
               spy={true}
               smooth={true}
               duration={500}
@@ -43,7 +52,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to="/signin"
+              to="/about"
               spy={true}
               smooth={true}
               duration={500}
@@ -61,25 +70,60 @@ const Navbar = () => {
               />
             </div>
 
-            <Link to="/signin">
+            <Link to="/cart">
               <MdOutlineShoppingCart className="size-7 text-white" />
             </Link>
 
             <div className="text-white">|</div>
 
-            <Link
-              to="/signin"
-              className="w-full text-white border-2 rounded-full px-5 py-1"
-            >
-              Masuk
-            </Link>
+            <div className="relative inline-block text-left">
+              <div>
+                <button
+                  type="button"
+                  id="menu-button"
+                  aria-expanded="true"
+                  aria-haspopup="true"
+                  onClick={toggleDropdown}
+                >
+                  <div className="flex bg-[#E53935] text-white rounded-full items-center px- py- ">
+                    <FaUserCircle className="size-8" />
+                  </div>
+                </button>
+              </div>
 
-            <Link
-              to="/signup"
-              className="w-full bg-white text-[#E53935] rounded-full px-5 py-1"
-            >
-              Daftar
-            </Link>
+              {isOpen && (
+                <div
+                  className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                >
+                  <div className="py-1" role="none">
+                    <a
+                      href="/404"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      role="menuitem"
+                    >
+                      Profile
+                    </a>
+                    <a
+                      href="/404"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      role="menuitem"
+                    >
+                      Pengaturan
+                    </a>
+                    <Link
+                      to="/"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      role="menuitem"
+                    >
+                      Keluar
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
           {/* End Navbar */}
 
@@ -156,4 +200,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default UserNavbar;

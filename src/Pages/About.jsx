@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "../Components/Nav";
-import Footer from "../Components/Footer";
+import Nav from "../Components/UserNavbar";
+import UserFooter from "../Components/UserFooter";
 
 const About = () => {
   return (
@@ -88,7 +88,7 @@ const About = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      <UserFooter />
     </>
   );
 };
