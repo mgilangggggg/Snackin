@@ -36,16 +36,18 @@ npm install
 - [x] 404 Pages (M. Gilang)
 - [x] User Home Page: UserNavbar, Carousel, CategoryProduct, NewProduct, Forum In Progress ⏳, StoreChoise, Footer (M. Gilang)
 - [x] Product Page (M. Gilang)
-- [ ] Product By Category (M. Gilang) In Progress ⏳
+- [x] About Us (Aji)
+- [x] Shopping Cart Page (M. Gilang)
+- [x] Order Details Page (Aji)
+- [ ] Store Profile Page 
+- [x] Profile User (Bella) On Progress ⏳
+- [ ] Setting Page
+- [ ] Product By Category
+- [ ] Completed Order Page (Aji) In Progress ⏳
 - [ ] Details Product Page
 - [ ] Add Cart Page
 - [ ] Checkout Page
-- [x] Order Details Page (Aji)
-- [ ] Completed Order Page (Aji) In Progress ⏳
-- [ ] Store Profile Page
-- [x] My Profile (Bella) On Progress ⏳
-- [x] About Us (Aji)
-- [ ] Dashboard Admin (CRUD)
+- [ ] Dashboard Admin: Create, Read, Update, Delete (CRUD)
   
 ##### Back-End
 - [ ] Database
