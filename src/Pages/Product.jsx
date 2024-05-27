@@ -1,361 +1,238 @@
 import React from "react";
 import Nav from "../Components/UserNavbar";
 import { Link } from "react-router-dom";
-import { TiShoppingCart } from "react-icons/ti";
 import Rating from "../Components/Rating";
 import UserFooter from "../Components/UserFooter";
+import { TiShoppingCart } from "react-icons/ti";
 
 const Product = () => {
-  const categories = [
+  // Category
+  const Category = [
     "Basreng",
     "Keripik",
-    "Kue kering",
+    "Kue Kering",
     "Biskuit",
     "Kerupuk",
     "Lainnya",
   ];
 
+  // Product
+  const Product = [
+    {
+      productId: 1,
+      productImage: "./Product/Basreng-Sulah-Viral.png",
+      productName: "Basreng Sulah Viral",
+      price: "20.000",
+      rating: 4.5,
+      totalReviews: 180,
+      soldCount: 50,
+    },
+    {
+      productId: 2,
+      productImage: "./Product/Keripik-Kentang-Balado.png",
+      productName: "Keripik Kentang",
+      price: "20.000",
+      discount: 5,
+      rating: 3.5,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 3,
+      productImage: "./Product/Pisang-Dolar.png",
+      productName: "Pisang Dolar",
+      price: "17.000",
+      discount: 5,
+      rating: 3.5,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 4,
+      productImage: "./Product/Sale-Lidah.png",
+      productName: "Sale Lidah",
+      price: "16.000",
+      discount: 5,
+      rating: 3.5,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 5,
+      productImage: "./Product/Kuping-Mini.png",
+      productName: "Kuping Mini",
+      price: "15.000",
+      discount: 5,
+      rating: 2.5,
+      totalReviews: 180,
+      soldCount: 15,
+    },
+    {
+      productId: 6,
+      productImage: "./Product/Kuping-Gajah.png",
+      productName: "Kuping Gajah",
+      price: "17.000",
+      discount: 5,
+      rating: 4,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 7,
+      productImage: "./Product/Kerupuk-Seblak.png",
+      productName: "Kerupuk Seblak",
+      price: "15.000",
+      discount: 5,
+      rating: 4,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 8,
+      productImage: "./Product/Cookies-Coklat.png",
+      productName: "Cookies Coklat",
+      price: "54.000",
+      discount: 5,
+      rating: 3,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 9,
+      productImage: "./Product/Nastar-Premium.png",
+      productName: "Nastar Premium",
+      price: "54.000",
+      discount: 5,
+      rating: 4.5,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 10,
+      productImage: "./Product/Kue-Kering.png",
+      productName: "Aneka Kue Kering",
+      price: "46.000",
+      discount: 5,
+      rating: 4,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 11,
+      productImage: "./Product/GG-SUS.png",
+      productName: "Sus Kering Isi Coklat",
+      price: "24.000",
+      discount: 5,
+      rating: 4.5,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 12,
+      productImage: "./Product/Kacang-Polong.png",
+      productName: "Kacang Polong",
+      price: "24.000",
+      discount: 5,
+      rating: 4.5,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 13,
+      productImage: "./Product/Singkong-Balado.png",
+      productName: "Keripik Singkong Balado 500gram",
+      price: "16.000",
+      discount: 5,
+      rating: 4,
+      totalReviews: 180,
+      soldCount: 30,
+    },
+    {
+      productId: 14,
+      productImage: "./Product/Donat.png",
+      productName: "Donat",
+      price: "10.000",
+      discount: 5,
+      rating: 4.5,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+    {
+      productId: 15,
+      productImage: "./Product/Singkong-Original.png",
+      productName: "Keripik Singkong Original 500gram",
+      price: "16.000",
+      discount: 5,
+      rating: 4.5,
+      totalReviews: 180,
+      soldCount: 20,
+    },
+  ];
+
   return (
     <>
+      {/* Navbar */}
       <Nav />
-      {/* Kategori */}
-      <div className="font-medium text-lg px-20 py-24">
-        <div className="flex items-center space-x-4">
-          <h1>Kategori </h1>
-          {categories.map((category, index) => (
+      {/* End Navbar */}
+
+      {/* Category */}
+      <div className="font-Poppins text-lg px-10 py-32">
+        <div className="flex items-center space-x-3">
+          <h1 className="font-medium py-4 text-2xl">Kategori </h1>
+          {Category.map((Category) => (
             <Link
-              key={index}
-              className="px-4 py-1 border text-sm rounded-full border-black hover:bg-[#E53935] hover:text-white focus:outline-none"
+              key={Category}
+              className="px-4 py-1 text-sm rounded-full border text-[#E53935] border-[#E53935] hover:bg-red-50"
             >
-              {category}
+              {Category}
             </Link>
           ))}
         </div>
-        <div className="container mx-auto px-4 py-16 flex flex-wrap">
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Basreng-Sulah-Viral.png"
-                alt="Basreng Sulah Viral"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">
-                Basreng Sulah Viral
-              </h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 20.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Pisang-Dolar.png"
-                alt="Pisang Dolar"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">Pisang </h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 20.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
+        <div className="container flex flex-wrap cursor-pointer">
+          {Product.map((product) => (
+            <div key={product.id} className="w-full md:w-1/2 lg:w-1/6 p-1">
+              <div className="bg-white border rounded-lg overflow-hidden py-2 hover:bg-white hover:shadow-xl">
+                <img
+                  src={product.productImage}
+                  alt={product.productName}
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+                <div className="p-4">
+                  <h5 className="text-lg font-normal text-start truncate">
+                    {product.productName}
+                  </h5>
+                  <p className="text-black font-medium text-xl">
+                    Rp
+                    {product.price.toLocaleString({
+                      style: "currency",
+                    })}
+                  </p>
+                  <div className="text-gray-400 text-xs mt-2">
+                    {product.soldCount} Terjual
+                  </div>
+                  <div className="container mx-auto py-1">
+                    <Rating rating={product.rating} totalStars={5} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Keripik-Kentang-Balado.png"
-                alt="Keripik Kentang Balado"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">
-                Keripik Kentang Balado
-              </h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 17.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Sale-Lidah.png"
-                alt="Sale Lidah"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">Sale Lidah</h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 16.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Kuping-Gajah.png"
-                alt="Kuping Gajah"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">Kuping Gajah</h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 17.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Kuping-Mini.png"
-                alt="Kuping Mini"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">Kuping Mini</h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 15.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Kerupuk-Seblak.png"
-                alt="Kerupuk Seblak"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">Kerupuk Seblak</h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 15.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Cookies-Coklat.png"
-                alt="Cookies Coklat"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">Cookies Coklat</h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 54.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Nastar-Premium.png"
-                alt="Nastar Premium"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">Nastar Premium</h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 65.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Aneka-Kue-Kering.png"
-                alt="Aneka Kue Kering"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">
-                Aneka Kue Kering
-              </h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 46.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/Kacang-Polong.png"
-                alt="Kacang Polong"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">
-                Kacang Polong Hijau
-              </h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 24.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-              <img
-                src="src/Assets/Product/GG-SUS.png"
-                alt="GG SUS Kering isi coklat"
-                className="w-full h-full rounded-lg object-cover mt-4 mb-4"
-              />
-              <h5 className="text-xl font-medium text-start">
-                GG SUS Kering isi coklat
-              </h5>
-              <p className="text-gray-700 text-base mt-2">Rp. 24.000</p>
-              <div className="container mx-auto py-4">
-                <Rating rating={3} totalStars={5} />
-              </div>
-              <div className="flex items-center space-x-24 mt-10">
-                <Link
-                  to="/order-detail"
-                  className="bg-[#E53935] text-white font-medium py-1 px-4 rounded focus:outline-none"
-                >
-                  Beli
-                </Link>
-                <div className="text-[#E53935] cursor-pointer">
-                  <TiShoppingCart className="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
+
+        {/* See More */}
+        <div className="flex items-center justify-center mt-10">
+          <button className="px-20 py-2 border border-[#E53935] text-[#E53935] hover:bg-red-50 rounded-full">
+            Lihat Lainnya
+          </button>
+        </div>
+        {/* End See More */}
       </div>
+      {/* End Category */}
+
+      {/* Footer */}
       <UserFooter />
+      {/* End Footer */}
     </>
   );
 };
