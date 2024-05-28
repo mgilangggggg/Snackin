@@ -39,12 +39,12 @@ npm install
 - [x] About Us (Aji)
 - [x] Shopping Cart Page (M. Gilang)
 - [x] Order Details Page (Aji)
-- [ ] Store Profile Page 
+- [x] Store Profile Page (M. Gilang)
 - [x] Profile User (Bella) On Progress ⏳
-- [ ] Setting Page
-- [ ] Product By Category
+- [ ] Setting Account Page
+- [ ] Filter Product By Category
 - [ ] Completed Order Page (Aji) In Progress ⏳
-- [ ] Details Product Page
+- [ ] Details Product Page (M. Gilang) In Progress ⏳
 - [ ] Add Cart Page
 - [ ] Checkout Page
 - [ ] Dashboard Admin: Create, Read, Update, Delete (CRUD)
