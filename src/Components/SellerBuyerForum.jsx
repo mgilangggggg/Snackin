@@ -6,9 +6,8 @@ const SellerBuyerForum = () => {
   // Seller & Buyer Forum
   const forum = [
     {
-      id: 1,
       image: "./Use-Customer.png",
-      title: "Use Customer",
+      name: "Use-Customer",
       description: `Nikmati kemudahan berdiskusi secara langsung dengan penjual dan
       pembeli, di mana Anda dapat merasakan interaksi yang lebih
       personal dan mendalam. Melalui percakapan ini, Anda memiliki
@@ -26,14 +25,10 @@ const SellerBuyerForum = () => {
           Forum Penjual & Pembeli
         </h1>
         {forum.map((forum) => (
-          <div key={forum.id} className="">
+          <div key={forum}>
             <div className="flex justify-center">
               <div className="w-10/12 h-60 bg-[#E53935] rounded-lg shadow-lg flex items-center justify-between p-4">
-                <img
-                  src={forum.image}
-                  alt={forum.title}
-                  className="size-auto"
-                />
+                <img src={forum.image} alt={forum.name} className="size-auto" />
                 <div className="flex flex-col justify-between h-full p-4">
                   <p className="text-white text-base text-justify mb-4">
                     {forum.description}

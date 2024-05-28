@@ -1,9 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types"; // Import from prop-types
+import PropTypes from "prop-types";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
+// Counting stars
 const Rating = ({ rating, totalStars }) => {
-  // Counting stars
   // Count the number of stars filled with
   const fullStars = Math.floor(rating);
 

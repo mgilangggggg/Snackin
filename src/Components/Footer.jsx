@@ -9,7 +9,7 @@ const Footer = () => {
       logo: "./Snackin.png",
       title: "Logo",
       description: `Toko online dengan berbagai macam makanan
-      ringan khas daerah yang ada di Jawa Barat.`,
+      ringan.`,
     },
   ];
 

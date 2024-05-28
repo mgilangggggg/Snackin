@@ -10,6 +10,7 @@ import About from "./Pages/About";
 import Cart from "./Pages/Cart";
 import Forum from "./Pages/Forum";
 import OrderDetail from "./Pages/OrderDetail";
+import StoreProfile from "./Pages/StoreProfile";
 import NotFound from "./Pages/404/NotFound";
 // import ByCategory from "./Pages/ByCategory";
 
@@ -35,6 +36,7 @@ function App() {
 
           {/* Content */}
           <Route path="/forum" element={<Forum />} />
+          <Route path="/store-profile" element={<StoreProfile />} />
           <Route path="/order-detail" element={<OrderDetail />} />
 
           {/* 404 */}

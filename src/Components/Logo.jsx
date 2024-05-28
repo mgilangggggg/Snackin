@@ -5,7 +5,7 @@ const Logo = () => {
   const Logo = [
     {
       logo: "./Snackin.png",
-      title: "Logo",
+      name: "Snackin-Logo",
     },
   ];
 
@@ -14,7 +14,7 @@ const Logo = () => {
       {Logo.map((Logo) => (
         <div key={Logo}>
           <Link to="/" className="flex flex-row items-center">
-            <img src={Logo.logo} alt={Logo.title} className="w-28" />
+            <img src={Logo.logo} alt={Logo.name} className="w-28" />
           </Link>
         </div>
       ))}
