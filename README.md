@@ -47,10 +47,15 @@ npm install
 - [ ] Details Product Page (M. Gilang) In Progress ⏳
 - [ ] Add Cart Page
 - [ ] Checkout Page
-- [ ] Dashboard Admin: Create, Read, Update, Delete (CRUD)
+- [ ] Dashboard Admin Toko: My Products, Sales, Orders, Promotions, Earnings
   
 ##### Back-End
+- [ ] Setup express.js
+- [ ] Controller, Query, Routing
+- [ ] Authentication: SignIn, SignUp, Reset
+- [ ] Product
 - [ ] Database
+- [ ] Dashboard Admin Toko: Create, Read, Update, Delete (CRUD)
 
 ### Our Team
 
