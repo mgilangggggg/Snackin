@@ -31,10 +31,10 @@ npm install
 ##### Front-End
 - [x] Setup a React project (M. Gilang)
 - [x] Routing (All Everyone)
-- [x] Home Page: Navbar, Carousel, CategoryProduct, NewProduct, Forum In Progress ⏳, StoreChoise, Footer (M. Gilang)
+- [x] Home Page: Navbar, Carousel, CategoryProduct, NewProduct, Forum, StoreChoise, Footer (M. Gilang)
 - [x] Authentication: SignIn, SignUp, Reset (M. Gilang)
 - [x] 404 Pages (M. Gilang)
-- [x] User Home Page: UserNavbar, Carousel, CategoryProduct, NewProduct, Forum In Progress ⏳, StoreChoise, Footer (M. Gilang)
+- [x] User Home Page: UserNavbar, Carousel, CategoryProduct, NewProduct, Forum, StoreChoise, Footer (M. Gilang)
 - [x] Product Page (M. Gilang)
 - [x] About Us (Aji)
 - [x] Shopping Cart Page (M. Gilang)
