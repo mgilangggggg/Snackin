@@ -99,12 +99,29 @@ const UserNavbar = () => {
                   aria-labelledby="menu-button"
                 >
                   <div className="py-1" role="none">
+                    <a className="flex items-center px-4 py-2 text-sm text-gray-700">
+                      <img
+                        src="./Avatar/Avatar1.png"
+                        alt=""
+                        className="w-8 h-8 mr-2"
+                      />
+                      mgilangggggg
+                    </a>
+
+                    <hr />
                     <a
                       href="/404"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
                     >
-                      Profile
+                      Profile Saya
+                    </a>
+                    <a
+                      href="/404"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      role="menuitem"
+                    >
+                      Buat Toko
                     </a>
                     <a
                       href="/404"
