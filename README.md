@@ -47,10 +47,10 @@ npm install
 - [ ] Setting Account Page
 - [ ] Filter Product By Category
 - [ ] Completed Order Page (Aji) In Progress ⏳
-- [ ] Details Product Page (M. Gilang) In Progress ⏳
+- [x] Details Product Page (M. Gilang)
 - [ ] Add Cart Page
 - [ ] Checkout Page
-- [ ] Dashboard Admin Toko: My Products, Sales, Orders, Promotions, Earnings
+- [ ] Dashboard Admin Toko: My Products, Sales, Orders, Promotions, Earnings (M. Gilang) In Progress ⏳
   
 ##### Back-End
 - [ ] Setup express.js
