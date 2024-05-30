@@ -41,6 +41,9 @@ npm install
 - [x] Order Details Page (Aji)
 - [x] Store Profile Page (M. Gilang)
 - [x] Profile User (Bella) On Progress ⏳
+- [ ] My Order Page
+- [ ] My Profile Page
+- [ ] My Rating Page
 - [ ] Setting Account Page
 - [ ] Filter Product By Category
 - [ ] Completed Order Page (Aji) In Progress ⏳
