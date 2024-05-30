@@ -2,7 +2,6 @@ import React from "react";
 import Nav from "../Components/UserNavbar";
 import Footer from "../Components/Footer";
 import { useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -14,7 +13,7 @@ const Cart = () => {
       variation: "Pedas Manis/250 gr",
       price: 15000,
       quantity: 1,
-      image: "src/Assets/Product/Basreng-Sajodo.png",
+      image: "./Product/Basreng-Sajodo.png",
     },
     {
       id: 2,
@@ -22,7 +21,7 @@ const Cart = () => {
       variation: "Ekstra Pedas/500 gr",
       price: 25000,
       quantity: 1,
-      image: "src/Assets/Product/Keripik-Kaca.png",
+      image: "./Product/Keripik-Kaca.png",
     },
   ]);
 
