@@ -46,7 +46,7 @@ npm install
 - [ ] My Rating Page
 - [ ] Setting Account Page
 - [ ] Filter Product By Category
-- [ ] Completed Order Page (Aji) In Progress ⏳
+- [x] Completed Order Page (Aji)
 - [x] Details Product Page (M. Gilang)
 - [ ] Add Cart Page
 - [ ] Checkout Page

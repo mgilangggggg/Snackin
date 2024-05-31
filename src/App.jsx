@@ -10,6 +10,7 @@ import About from "./Pages/About";
 import Cart from "./Pages/Cart";
 import Forum from "./Pages/Forum";
 import DetailProduct from "./Pages/DetailProduct";
+import OrderCompltePage from "./Pages/OrderCompletePage";
 import OrderDetail from "./Pages/OrderDetail";
 import StoreProfile from "./Pages/StoreProfile";
 import NotFound from "./Pages/404/NotFound";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/store-profile" element={<StoreProfile />} />
           <Route path="/detail-product" element={<DetailProduct />} />
           <Route path="/order-detail" element={<OrderDetail />} />
+          <Route path="/order-complete-page" element={<OrderCompltePage />} />
 
           {/* 404 */}
           <Route path="/404" element={<NotFound />} />

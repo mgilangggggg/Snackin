@@ -25,12 +25,12 @@ const About = () => {
           </h2>
           <div className="columns-2 py-4">
             <img
-              src="src/Assets/About/about1.png"
+              src="./About/about1.png"
               alt="UMKM"
               className="object-fill h-50 w-98 mb-4"
             />
             <img
-              src="src/Assets/About/about2.png"
+              src="./About/about2.png"
               alt="UMKM"
               className="object-fill h-60"
             />
@@ -48,7 +48,7 @@ const About = () => {
           <h2 className="text-xl font-bold mb-4">Filosofi Logo</h2>
           <div className="columns-2 flex items-center">
             <img
-              src="src/Assets/About/logo-about.png"
+              src="./About/logo-about.png"
               alt="Snackin Logo"
               className="w-32 h-32"
             />

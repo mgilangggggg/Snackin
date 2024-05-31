@@ -12,7 +12,7 @@ const OrderDetail = () => {
       variation: "Pedas Manis/250 gr",
       price: 15000,
       quantity: 1,
-      image: "src/Assets/Product/Basreng-Sajodo.png",
+      image: "./Product/Basreng-Sajodo.png",
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const OrderDetail = () => {
       variation: "Ekstra Pedas/500 gr",
       price: 25000,
       quantity: 1,
-      image: "src/Assets/Product/Keripik-Kaca.png",
+      image: "./Product/Keripik-Kaca.png",
     },
   ]);
 
@@ -137,7 +137,7 @@ const OrderDetail = () => {
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="shipping" />
                   <img
-                    src="src/Assets/Shipping/JNE.png"
+                    src="./Shipping/JNE.png"
                     alt="JNE"
                     className="w-16"
                   />
@@ -145,7 +145,7 @@ const OrderDetail = () => {
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="shipping" />
                   <img
-                    src="src/Assets/Shipping/JNT.png"
+                    src="./Shipping/JNT.png"
                     alt="J&T Express"
                     className="w-16"
                   />
@@ -158,7 +158,7 @@ const OrderDetail = () => {
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="payment" />
                   <img
-                    src="src/Assets/Payment/bri.png"
+                    src="./Payment/bri.png"
                     alt="BRI"
                     className="w-16"
                   />
@@ -166,7 +166,7 @@ const OrderDetail = () => {
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="payment" />
                   <img
-                    src="src/Assets/Payment/bca.png"
+                    src="./Payment/bca.png"
                     alt="BCA"
                     className="w-16"
                   />
@@ -174,7 +174,7 @@ const OrderDetail = () => {
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="payment" />
                   <img
-                    src="src/Assets/Payment/dana.png"
+                    src="./Payment/dana.png"
                     alt="Dana"
                     className="w-16"
                   />
@@ -182,7 +182,7 @@ const OrderDetail = () => {
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="payment" />
                   <img
-                    src="src/Assets/Payment/mandiri.png"
+                    src="./Payment/mandiri.png"
                     alt="Mandiri"
                     className="w-16"
                   />
@@ -205,16 +205,16 @@ const OrderDetail = () => {
                 Pembayaran telah diverifikasi
               </p>
               <img
-                src="src/Assets/Payment/verification-success.png"
+                src="./Payment/verification-success.png"
                 alt="Verified"
                 className="w-16 h-16 mx-auto mb-4"
               />
-              <button
+              <a href="/order-complete-page"
                 className="bg-red-500 text-white px-4 py-2 rounded"
                 onClick={() => setIsPaymentVerified(false)}
               >
                 Selanjutnya
-              </button>
+              </a>
             </div>
           </div>
         )}
