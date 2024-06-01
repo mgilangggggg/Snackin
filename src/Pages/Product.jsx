@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "../Components/UserNavbar";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
@@ -6,6 +6,9 @@ import Rating from "../Components/Rating";
 import UserFooter from "../Components/UserFooter";
 
 const Product = () => {
+  // State untuk kategori yang dipilih
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   // Category
   const Category = [
     "Basreng",
@@ -23,6 +26,7 @@ const Product = () => {
       productId: 1,
       productImage: "./Product/Basreng-Sulah-Viral.png",
       productName: "Basreng Sulah Viral 500gram pedas",
+      category: "Basreng",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -33,6 +37,7 @@ const Product = () => {
       productId: 2,
       productImage: "./Product/Keripik-Kentang-Balado.png",
       productName: "Keripik Kentang",
+      category: "Keripik",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -43,6 +48,7 @@ const Product = () => {
       productId: 3,
       productImage: "./Product/Pisang-Dolar.png",
       productName: "Pisang Dolar",
+      category: "Keripik",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -53,6 +59,7 @@ const Product = () => {
       productId: 4,
       productImage: "./Product/Sale-Lidah.png",
       productName: "Sale Lidah",
+      category: "Keripik",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -63,6 +70,7 @@ const Product = () => {
       productId: 5,
       productImage: "./Product/Kuping-Mini.png",
       productName: "Kuping Mini",
+      category: "Keripik",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -73,6 +81,7 @@ const Product = () => {
       productId: 6,
       productImage: "./Product/Kuping-Gajah.png",
       productName: "Kuping Gajah",
+      category: "Keripik",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -83,6 +92,7 @@ const Product = () => {
       productId: 7,
       productImage: "./Product/Kerupuk-Seblak.png",
       productName: "Kerupuk Seblak",
+      category: "Kerupuk",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -93,6 +103,7 @@ const Product = () => {
       productId: 8,
       productImage: "./Product/Cookies-Coklat.png",
       productName: "Cookies Coklat",
+      category: "Kue Kering",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -103,6 +114,7 @@ const Product = () => {
       productId: 9,
       productImage: "./Product/Nastar-Premium.png",
       productName: "Nastar Premium",
+      category: "Kue Kering",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -113,6 +125,7 @@ const Product = () => {
       productId: 10,
       productImage: "./Product/Kue-Kering.png",
       productName: "Aneka Kue Kering",
+      category: "Kue Kering",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -123,6 +136,7 @@ const Product = () => {
       productId: 11,
       productImage: "./Product/GG-SUS.png",
       productName: "Sus Kering Isi Coklat",
+      category: "Kue Kering",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -133,6 +147,7 @@ const Product = () => {
       productId: 12,
       productImage: "./Product/Kacang-Polong.png",
       productName: "Kacang Polong",
+      category: "Lainnya",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -143,6 +158,7 @@ const Product = () => {
       productId: 13,
       productImage: "./Product/Singkong-Balado.png",
       productName: "Keripik Singkong Balado 500gram",
+      category: "Keripik",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -153,6 +169,7 @@ const Product = () => {
       productId: 14,
       productImage: "./Product/Donat.png",
       productName: "Donat",
+      category: "Lainnya",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -163,6 +180,7 @@ const Product = () => {
       productId: 15,
       productImage: "./Product/Singkong-Original.png",
       productName: "Keripik Singkong Varian Original 500gram",
+      category: "Keripik",
       originalPrice: 13000,
       discountPercentage: 12,
       location: "kab. Bandung",
@@ -170,7 +188,10 @@ const Product = () => {
       soldCount: 50,
     },
   ];
-  // End Data Produk
+
+  const filteredProducts = selectedCategory
+    ? Product.filter((product) => product.category === selectedCategory)
+    : Product;
 
   return (
     <>
@@ -182,20 +203,25 @@ const Product = () => {
         {/* Category */}
         <div className="flex items-center space-x-3">
           <h1 className="font-medium py-4 text-2xl">Kategori </h1>
-          {Category.map((Category) => (
-            <Link
-              key={Category}
-              className="px-4 py-1 text-sm rounded-full border text-[#E53935] border-[#E53935] hover:bg-red-50"
+          {Category.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 py-1 text-sm rounded-full border ${
+                selectedCategory === category
+                  ? "bg-[#E53935] text-white"
+                  : "text-[#E53935] border-[#E53935] hover:bg-red-50"
+              }`}
             >
-              {Category}
-            </Link>
+              {category}
+            </button>
           ))}
         </div>
         {/* End Category */}
 
         {/* Product */}
         <div className="container flex flex-wrap">
-          {Product.map((product) => {
+          {filteredProducts.map((product) => {
             // Calculate the discount amount
             const discountedAmount =
               (product.discountPercentage / 100) * product.originalPrice;

@@ -41,11 +41,11 @@ npm install
 - [x] Order Details Page (Aji)
 - [x] Store Profile Page (M. Gilang)
 - [x] Profile User (Bella) On Progress ⏳
-- [ ] My Order Page
+- [x] My Order Page (Aji) On Progress ⏳
 - [ ] My Profile Page
 - [ ] My Rating Page
 - [x] Setting Account Page (Bella) On Progress ⏳
-- [ ] Filter Product By Category
+- [x] Filter Product By Category (Aji)
 - [x] Completed Order Page (Aji)
 - [x] Details Product Page (M. Gilang)
 - [ ] Add Cart Page
