@@ -14,12 +14,8 @@ import OrderCompltePage from "./Pages/OrderCompletePage";
 import OrderDetail from "./Pages/OrderDetail";
 import StoreProfile from "./Pages/StoreProfile";
 import NotFound from "./Pages/404/NotFound";
-<<<<<<< HEAD
 import Profile from "./Pages/Profile";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-=======
 // import ByCategory from "./Pages/ByCategory";
->>>>>>> a1125f86c3ac5cf049f0ff875016540569053559
 
 function App() {
   return (
@@ -39,11 +35,8 @@ function App() {
           <Route path="/home" element={<UserHomePage />} />
           <Route path="/product" element={<Product />} />
           <Route path="/about" element={<About />} />
-<<<<<<< HEAD
-          <Route path="/profile" element={<Profile />} />
-=======
           <Route path="/cart" element={<Cart />} />
->>>>>>> a1125f86c3ac5cf049f0ff875016540569053559
+          <Route path="/profile" element={<Profile />} />
 
           {/* Content */}
           <Route path="/forum" element={<Forum />} />
