@@ -46,7 +46,7 @@ const Profile = () => {
     </div>
     
     <div class="mb-6">
-        <label for="password" class="block mb-2 text-sm font-medium text-blac">Alamat Lengkap</label>
+        <label for="password" class="block mb-2 text-sm font-medium text-blac">Alamat Lengkap & Nomer Rumah</label>
         <input type="password" id="password" class="bg-white border-2 border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Jl. Pondok Genggong No. 1924 RT.39 RW.66, Jawa Barat, Indonesia." disabled />
     </div> 
 </form>
