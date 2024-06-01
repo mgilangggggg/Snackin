@@ -8,6 +8,7 @@ import Product from "./Pages/Product";
 import About from "./Pages/About";
 import OrderDetail from "./Pages/OrderDetail";
 import NotFound from "./Pages/404/NotFound";
+import Profile from "./Pages/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/product" element={<Product />} />
           <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
 
           {/* ORDER */}
           <Route path="/order-detail" element={<OrderDetail />} />
