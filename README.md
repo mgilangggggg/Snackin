@@ -44,7 +44,7 @@ npm install
 - [ ] My Order Page
 - [ ] My Profile Page
 - [ ] My Rating Page
-- [ ] Setting Account Page
+- [x] Setting Account Page (Bella)
 - [ ] Filter Product By Category
 - [x] Completed Order Page (Aji)
 - [x] Details Product Page (M. Gilang)
