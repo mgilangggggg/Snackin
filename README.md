@@ -29,24 +29,36 @@ npm install
 
 ### List Pages
 ##### Front-End
-- [x] SignUp (M. Gilang)
-- [x] SignIn (M. Gilang)
-- [x] Forgot Account (M. Gilang)
-- [x] Home Page before and after login (M. Gilang)
+- [x] Setup a React project (M. Gilang)
+- [x] Routing (All Everyone)
+- [x] Home Page: Navbar, Carousel, CategoryProduct, NewProduct, Forum, StoreChoise, Footer (M. Gilang)
+- [x] Authentication: SignIn, SignUp, Reset (M. Gilang)
+- [x] 404 Pages (M. Gilang)
+- [x] User Home Page: UserNavbar, Carousel, CategoryProduct, NewProduct, Forum, StoreChoise, Footer (M. Gilang)
 - [x] Product Page (M. Gilang)
-- [ ] Product By Category (M. Gilang) In Progress ⏳
-- [ ] Details Product Page
+- [x] About Us (Aji)
+- [x] Shopping Cart Page (M. Gilang)
+- [x] Order Details Page (Aji)
+- [x] Store Profile Page (M. Gilang)
+- [x] Profile User (Bella) On Progress ⏳
+- [ ] My Order Page
+- [ ] My Profile Page
+- [ ] My Rating Page
+- [x] Setting Account Page (Bella)
+- [ ] Filter Product By Category
+- [x] Completed Order Page (Aji)
+- [x] Details Product Page (M. Gilang)
 - [ ] Add Cart Page
 - [ ] Checkout Page
-- [x] Order Details Page (Aji)
-- [ ] Completed Order Page (Aji) In Progress ⏳
-- [ ] Store Profile Page
-- [ ] My Profile
-- [x] About Us (Aji)
-- [ ] Dashboard Admin (CRUD)
+- [ ] Dashboard Admin Toko: My Products, Sales, Orders, Promotions, Earnings (M. Gilang) In Progress ⏳
   
 ##### Back-End
+- [ ] Setup express.js
+- [ ] Controller, Query, Routing
+- [ ] Authentication: SignIn, SignUp, Reset
+- [ ] Product
 - [ ] Database
+- [ ] Dashboard Admin Toko: Create, Read, Update, Delete (CRUD)
 
 ### Our Team
 

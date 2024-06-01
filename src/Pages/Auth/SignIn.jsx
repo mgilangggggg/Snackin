@@ -3,35 +3,37 @@ import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
-    <div className="w-full h-screen flex items-start">
-      {/* Image */}
-      <div className="relative w-1/2 h-full flex flex-col">
+    <main className="flex flex-row-reverse w-full h-screen">
+      {/* Img */}
+      <div className="relative w-1/2 h-full">
         <img
-          src="/src/Assets/Auth/SignIn.png"
+          src="./Auth/SignIn.png"
           alt="SignIn"
           className="w-full h-full object-cover"
         />
       </div>
 
-      <div className="w-1/2 h-full bg-[#e8d5d5] flex flex-col p-10 justify-between items-center">
+      <div className="flex flex-col w-1/2 h-full bg-[#e8d5d5] p-14 justify-between items-center">
         <div className="w-full flex flex-col max-w-[400px]">
-          <div className="w-full flex flex-col mb-2">
-            <h3 className="text-3xl font-semibold mb-2">Masuk!</h3>
-            <p className="text-base mb-2">
+          <div className="flex flex-col w-full mb-2">
+            <h3 className="text-3xl font-poppins font-medium mb-2">Masuk!</h3>
+            <p className="font-poppins font-light mb-2">
               Selamat Datang Kembali! Silahkan Masuk.
             </p>
           </div>
 
           {/* Input field for email and password */}
-          <div className="w-full flex flex-col">
-            <input
-              type="email"
-              placeholder="Email"
-              id="email"
-              name="email"
-              required
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935]"
-            />
+          <div className="flex flex-col w-full">
+            <div>
+              <input
+                type="email"
+                placeholder="Email"
+                id="email"
+                name="email"
+                required
+                className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935]"
+              />
+            </div>
 
             <input
               type="password"
@@ -39,22 +41,22 @@ const SignIn = () => {
               id="password"
               name="password"
               required
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-[#E53935] my-4"
+              className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935] my-4"
             />
           </div>
 
           {/* Checkbox for 'Remember Me' and 'Forgot Password?' link */}
           <div className="w-full flex items-center justify-between">
             <div className="w-full flex items-center">
-              <label className="flex items-center gap-x-2 accent-[#E53935]">
+              <label className="flex items-center gap-x-2 text-sm font-poppins font-light accent-[#E53935]">
                 <input type="checkbox" className="w-4 h-4" />
                 Ingat Saya
               </label>
             </div>
 
             <Link
-              to="/Forgot"
-              className="text-sm font-medium whitespace-nowrap cursor-pointer"
+              to="/forgot"
+              className="text-sm font-poppins font-light whitespace-nowrap"
             >
               Lupa Password?
             </Link>
@@ -65,7 +67,7 @@ const SignIn = () => {
             <Link
               to="/home"
               type="submit"
-              className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-semibold text-white hover:bg-[#FF8A65] my-2"
+              className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-white shadow-sm hover:text-[#E53935] hover:bg-gray-100 my-2"
             >
               Masuk
             </Link>
@@ -74,41 +76,52 @@ const SignIn = () => {
           {/* Horizontal line and 'or' text */}
           <div className="w-full flex items-center justify-center relative py-2">
             <div className="w-full h-[1px] bg-black"></div>
-            <p className="text-sm absolute text-black/80 bg-[#e8d5d5]">atau</p>
+            <p className="text-sm font-poppins font-light absolute text-black/80 bg-[#e8d5d5]">
+              atau
+            </p>
           </div>
 
           {/* Login with Facebook button */}
-          <button className="w-full bg-[#f5f5f5] border border-gray-300 rounded-md p-2 text-center flex items-center justify-center font-semibold text-[#060606] hover:bg-[#1877f2] hover:text-white my-2 ">
+          <Link
+            to=""
+            className="w-full bg-[#f5f5f5] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-[#060606] hover:bg-[#1877f2] hover:text-white my-2 "
+          >
             <img
               src="./Icon-Facebook.png"
               alt="Icon-Facebook"
               className="w-5 mr-3"
             />
             Masuk dengan Facebook
-          </button>
+          </Link>
 
           {/* Login with Google button */}
-          <button className="w-full bg-[#f5f5f5] border border-gray-300 rounded-md p-2 text-center flex items-center justify-center font-semibold text-[#060606] hover:bg-[#262626] hover:text-white my-2 ">
+          <Link
+            to=""
+            className="w-full bg-[#f5f5f5] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-[#060606] hover:bg-[#262626] hover:text-white my-2 "
+          >
             <img
               src="./Icon-Google.png"
               alt="Icon-Google"
               className="w-5 mr-3"
             />
             Masuk dengan Google
-          </button>
+          </Link>
 
           {/* SignUp link */}
           <div className="w-full flex items-center justify-center my-4">
-            <p className="text-sm font-normal text-[#060606]">
+            <p className="text-sm font-poppins font-light text-[#060606]">
               Belum memiliki akun?
-              <Link to="/SignUp" className="font-semibold cursor-pointer p-2">
+              <Link
+                to="/signup"
+                className="font-poppins font-light text-[#E53935] p-2"
+              >
                 Daftar
               </Link>
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

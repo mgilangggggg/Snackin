@@ -3,13 +3,13 @@ import { FaSquareFacebook, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const UserFooter = () => {
   const Logo = [
     {
       logo: "./Snackin.png",
       title: "Logo",
       description: `Toko online dengan berbagai macam makanan
-      ringan.`,
+          ringan.`,
     },
   ];
 
@@ -34,19 +34,19 @@ const Footer = () => {
             <h1 className="text-base pb-4 pt-5 md:pt-0">Halaman</h1>
             <nav className=" flex flex-col gap-2">
               <Link
-                to="/"
+                to="/home"
                 className="text-sm font-light hover:text-gray-300 cursor-pointer"
               >
                 Beranda
               </Link>
               <Link
-                to="/signin"
+                to="/product"
                 className="text-sm font-light hover:text-gray-300 cursor-pointer"
               >
                 Produk
               </Link>
               <Link
-                to="/signin"
+                to="/about"
                 className="text-sm font-light hover:text-gray-300 cursor-pointer"
               >
                 Tentang
@@ -115,4 +115,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default UserFooter;

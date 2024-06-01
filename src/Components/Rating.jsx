@@ -1,34 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-const Rating = ({ rating = 0, totalStars = 5 }) => {
-  const [selectedRating, setSelectedRating] = useState(rating);
+// Counting stars
+const Rating = ({ rating, totalStars }) => {
+  // Count the number of stars filled with
+  const fullStars = Math.floor(rating);
 
-  const handleClick = (rating) => {
-    setSelectedRating(rating);
-  };
+  // Determine whether there are half stars
+  const halfStars = rating % 1 !== 0 ? 1 : 0;
+
+  // Counting the number of empty stars
+  const emptyStars = totalStars - fullStars - halfStars;
 
   return (
-    <div className="flex flex-row space-x-1">
-      {[...Array(totalStars)].map((star, index) => (
-        <Star
-          key={index}
-          selected={selectedRating >= index + 1}
-          onClick={() => handleClick(index + 1)}
-        />
-      ))}
-    </div>
+    <>
+      <div className="flex items-center text-xs font-Poppins">
+        {[...Array(fullStars)].map((_, index) => (
+          <FaStar key={index} className="text-yellow-500" />
+        ))}
+        {halfStars === 1 && <FaStarHalfAlt className="text-yellow-500" />}
+        {[...Array(emptyStars)].map((_, index) => (
+          <FaRegStar key={index} className="text-yellow-500" />
+        ))}
+      </div>
+    </>
   );
 };
 
-const Star = ({ selected, onClick }) => (
-  <span
-    className={`cursor-pointer text-xl ${
-      selected ? "text-yellow-500" : "text-gray-300"
-    }`}
-    onClick={onClick}
-  >
-    ★
-  </span>
-);
+Rating.propTypes = {
+  rating: PropTypes.number.isRequired,
+  totalStars: PropTypes.number.isRequired,
+};
 
 export default Rating;
