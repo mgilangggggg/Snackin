@@ -43,7 +43,7 @@ npm install
 - [x] Profile User (Bella)
 - [x] My Order Page (Aji) On Progress ⏳
 - [ ] My Profile Page
-- [ ] My Rating Page
+- [x] My Rating Page (Bella) On Progress ⏳
 - [x] Setting Account Page (Bella)
 - [x] Filter Product By Category (Aji)
 - [x] Completed Order Page (Aji)
