@@ -1,12 +1,12 @@
 import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
-import userThree from '../images/user/user-03.png';
+import userThree from '../images/brand/Gumilang-Snack.png';
 import DefaultLayout from '../layout/DefaultLayout';
 
 const Settings = () => {
   return (
     <DefaultLayout>
       <div className="mx-auto max-w-270">
-        <Breadcrumb pageName="Settings" />
+        <Breadcrumb pageName="Pengaturan" />
 
         <div className="grid grid-cols-5 gap-8">
           <div className="col-span-5 xl:col-span-3">
@@ -57,8 +57,8 @@ const Settings = () => {
                           type="text"
                           name="fullName"
                           id="fullName"
-                          placeholder="Maung Ciro"
-                          defaultValue="Maung Ciro"
+                          placeholder=""
+                          defaultValue="Abdul Dilan"
                         />
                       </div>
                     </div>
@@ -75,8 +75,8 @@ const Settings = () => {
                         type="text"
                         name="phoneNumber"
                         id="phoneNumber"
-                        placeholder="+6290 3343 7865"
-                        defaultValue="+6290 3343 7865"
+                        placeholder=""
+                        defaultValue="+6200 0000 0000"
                       />
                     </div>
                   </div>
@@ -119,8 +119,8 @@ const Settings = () => {
                         type="email"
                         name="emailAddress"
                         id="emailAddress"
-                        placeholder="persib@gmail.com"
-                        defaultValue="persib@gmail.com"
+                        placeholder=""
+                        defaultValue="abdulll@gmail.com"
                       />
                     </div>
                   </div>
@@ -137,8 +137,8 @@ const Settings = () => {
                       type="text"
                       name="Username"
                       id="Username"
-                      placeholder="cirooo"
-                      defaultValue="cirooo"
+                      placeholder=""
+                      defaultValue="abduldilan1993"
                     />
                   </div>
 
@@ -186,8 +186,8 @@ const Settings = () => {
                         name="bio"
                         id="bio"
                         rows={6}
-                        placeholder="Write your bio here"
-                        defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere fermentum urna, eu condimentum mauris tempus ut. Donec fermentum blandit aliquet."
+                        placeholder="Tulis biografi Anda di sini"
+                        defaultValue=""
                       ></textarea>
                     </div>
                   </div>
@@ -214,7 +214,7 @@ const Settings = () => {
             <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
               <div className="border-b border-stroke py-4 px-7 dark:border-strokedark">
                 <h3 className="font-medium text-black dark:text-white">
-                  Your Photo
+                  Foto Anda
                 </h3>
               </div>
               <div className="p-7">
