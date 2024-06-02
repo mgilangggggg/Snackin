@@ -15,6 +15,7 @@ import OrderDetail from "./Pages/OrderDetail";
 import StoreProfile from "./Pages/StoreProfile";
 import NotFound from "./Pages/404/NotFound";
 import Profile from "./Pages/Profile";
+import ProfileSettings from "./Pages/ProfileSettings";
 // import ByCategory from "./Pages/ByCategory";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path="/detail-product" element={<DetailProduct />} />
           <Route path="/order-detail" element={<OrderDetail />} />
           <Route path="/order-complete-page" element={<OrderCompltePage />} />
+          <Route path="/profileSettings" element={<ProfileSettings />} />
 
           {/* 404 */}
           <Route path="/404" element={<NotFound />} />

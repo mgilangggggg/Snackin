@@ -107,14 +107,14 @@ const Nav = () => {
                         Profile
                       </a>
                       <a
-                        href="#"
+                        href="/profileSettings"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                       >
                         Pengaturan
                       </a>
                       <Link
-                        to="/"
+                        to="#"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                       >
