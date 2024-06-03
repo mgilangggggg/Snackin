@@ -42,7 +42,7 @@ npm install
 - [x] Store Profile Page (M. Gilang)
 - [x] Profile User (Bella)
 - [x] My Order Page (Aji) On Progress ⏳
-- [ ] My Profile Page
+- [x] My Profile Page (Bella) On Progress ⏳
 - [x] My Rating Page (Bella) On Progress ⏳
 - [x] Setting Account Page (Bella)
 - [x] Filter Product By Category (Aji)
