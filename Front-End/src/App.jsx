@@ -17,7 +17,6 @@ import StoreProfile from "./Pages/StoreProfile";
 import MyProfile from "./Pages/MyProfile";
 import ProfileSettings from "./Pages/ProfileSettings";
 import NotFound from "./Pages/404/NotFound";
-// import ByCategory from "./Pages/ByCategory";
 
 function App() {
   return (
@@ -51,7 +50,6 @@ function App() {
 
           {/* 404 */}
           <Route path="/404" element={<NotFound />} />
-          {/* <Route path="/by-category" element={<ByCategory />} /> */}
         </Routes>
       </BrowserRouter>
     </>
