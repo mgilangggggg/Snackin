@@ -1,4 +1,5 @@
 import React from "react";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import SignIn from "./Pages/Auth/SignIn";
@@ -13,9 +14,9 @@ import DetailProduct from "./Pages/DetailProduct";
 import OrderCompltePage from "./Pages/OrderCompletePage";
 import OrderDetail from "./Pages/OrderDetail";
 import StoreProfile from "./Pages/StoreProfile";
-import NotFound from "./Pages/404/NotFound";
-import Profile from "./Pages/Profile";
+import MyProfile from "./Pages/MyProfile";
 import ProfileSettings from "./Pages/ProfileSettings";
+import NotFound from "./Pages/404/NotFound";
 // import ByCategory from "./Pages/ByCategory";
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
           <Route path="/product" element={<Product />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/myprofile" element={<MyProfile />} />
 
           {/* Content */}
           <Route path="/forum" element={<Forum />} />
@@ -45,7 +46,8 @@ function App() {
           <Route path="/detail-product" element={<DetailProduct />} />
           <Route path="/order-detail" element={<OrderDetail />} />
           <Route path="/order-complete-page" element={<OrderCompltePage />} />
-          <Route path="/profileSettings" element={<ProfileSettings />} />
+
+          <Route path="/setting" element={<ProfileSettings />} />
 
           {/* 404 */}
           <Route path="/404" element={<NotFound />} />

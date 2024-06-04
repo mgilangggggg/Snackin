@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+
+import Logo from "./Logo";
 import { Link } from "react-router-dom";
-import { FaSearch, FaUser } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
 import { FaCircleUser } from "react-icons/fa6";
@@ -22,44 +24,29 @@ const Nav = () => {
   };
 
   return (
-    <>
+    <nav>
       {/* Navbar Setelah Login */}
       <div className="fixed w-full z-50">
         <div>
           <div className="flex flex-row justify-between p-4 md:px-20 px-5 bg-[#E53935] shadow-[0_3px_10px_rgba(0,0,0,0.2)]">
-            <div className="flex flex-row items-center cursor-pointer">
-              <span></span>
-              <img
-                src="./Snackin.png"
-                alt="Logo"
-                className="max-w-[400px] mx-auto w-28"
-              />
-            </div>
-
-            <nav className="hidden md:flex flex-row items-center text-sm font-medium gap-4">
+            {/* Logo */}
+            <Logo />
+            {/* End Logo */}
+            <div className="hidden md:flex flex-row items-center text-sm font-medium gap-4">
               <Link
                 to="/home"
-                spy={true}
-                smooth={true}
-                duration={500}
                 className="text-white hover:text-[#FF8A65] transition-all cursor-pointer"
               >
                 Beranda
               </Link>
               <Link
                 to="/product"
-                spy={true}
-                smooth={true}
-                duration={500}
                 className="text-white hover:text-[#FF8A65] transition-all cursor-pointer"
               >
                 Produk
               </Link>
               <Link
                 to="/about"
-                spy={true}
-                smooth={true}
-                duration={500}
                 className="text-white hover:text-[#FF8A65] transition-all cursor-pointer"
               >
                 Tentang
@@ -99,22 +86,20 @@ const Nav = () => {
                     aria-labelledby="menu-button"
                   >
                     <div className="py-1" role="none">
-                      <a
-                        href="/profile"
+                      <Link
+                        to="/profile"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
                       >
                         Profile
-                      </a>
-                      <a
-                        href="/profileSettings"
+                      </Link>
+                      <Link
+                        to="/setting"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
                       >
                         Pengaturan
-                      </a>
+                      </Link>
                       <Link
-                        to="#"
+                        to="/"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                       >
@@ -124,7 +109,7 @@ const Nav = () => {
                   </div>
                 )}
               </div>
-            </nav>
+            </div>
 
             <div className="md:hidden flex items-center">
               {menu ? (
@@ -141,28 +126,19 @@ const Nav = () => {
             } lg:hidden flex flex-col absolute bg-[#E53935] text-white left-0 top-20 font-semibold text-2xl text-center pt-8 pb-4 gap-8 w-full h-fit transition-transform duration-300`}
           >
             <Link
-              to="/"
-              spy={true}
-              smooth={true}
-              duration={500}
+              to="/home"
               className="text-white hover:text-[#FF8A65] transition-all cursor-pointer"
             >
               Beranda
             </Link>
             <Link
               to="/Product"
-              spy={true}
-              smooth={true}
-              duration={500}
               className="text-white hover:text-[#FF8A65] transition-all cursor-pointer"
             >
               Produk
             </Link>
             <Link
               to="/About"
-              spy={true}
-              smooth={true}
-              duration={500}
               className="text-white hover:text-[#FF8A65] transition-all cursor-pointer"
             >
               Tentang
@@ -170,7 +146,7 @@ const Nav = () => {
             <div>
               <input
                 type="text"
-                placeholder="Cari"
+                placeholder="Mau cari apa?"
                 className="px-2 py-1 rounded-full"
               />
             </div>
@@ -189,7 +165,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-    </>
+    </nav>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CategoryProduct = () => {
   // Category Product
@@ -52,9 +53,12 @@ const CategoryProduct = () => {
   return (
     <>
       {/* Category Product*/}
-      <div className="font-Poppins text-lg px-10 cursor-pointer">
+      <div className="font-Poppins text-lg px-10">
         <h1 className="font-medium py-4 text-2xl">Kategori</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <Link
+          to="/product"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {category1.map((category) => (
             <div
               key={category.id}
@@ -72,11 +76,14 @@ const CategoryProduct = () => {
               </p>
             </div>
           ))}
-        </div>
+        </Link>
       </div>
 
-      <div className="font-Poppins text-lg px-10 cursor-pointer">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="font-Poppins text-lg px-10">
+        <Link
+          to="/product"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {category2.map((category) => (
             <div
               key={category.id}
@@ -94,7 +101,7 @@ const CategoryProduct = () => {
               </h3>
             </div>
           ))}
-        </div>
+        </Link>
       </div>
       {/* End Category Product */}
     </>

@@ -27,7 +27,7 @@ const Product = () => {
       productImage: "./Product/Basreng-Sulah-Viral.png",
       productName: "Basreng Sulah Viral 500gram pedas",
       category: "Basreng",
-      originalPrice: 13000,
+      originalPrice: 30000,
       discountPercentage: 12,
       location: "kab. Bandung",
       rating: 4.5,
@@ -230,7 +230,8 @@ const Product = () => {
             const discountedPrice = product.originalPrice - discountedAmount;
 
             return (
-              <div
+              <Link
+                to="/detail-product"
                 key={product.productId}
                 className="w-full md:w-1/2 lg:w-1/6 p-1"
               >
@@ -269,7 +270,7 @@ const Product = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

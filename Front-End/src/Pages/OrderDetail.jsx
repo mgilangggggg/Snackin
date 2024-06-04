@@ -8,19 +8,11 @@ const OrderDetail = () => {
   const [items, setItems] = useState([
     {
       id: 1,
-      name: "Basreng Pedas Viral",
-      variation: "Pedas Manis/250 gr",
-      price: 15000,
+      name: "Basreng Sulah Viral 500gram pedas",
+      variation: "Pedas / 500gram",
+      price: 26400,
       quantity: 1,
       image: "./Product/Basreng-Sajodo.png",
-    },
-    {
-      id: 2,
-      name: "Keripik Kaca",
-      variation: "Ekstra Pedas/500 gr",
-      price: 25000,
-      quantity: 1,
-      image: "./Product/Keripik-Kaca.png",
     },
   ]);
 
@@ -136,11 +128,7 @@ const OrderDetail = () => {
               <div className="space-y-2">
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="shipping" />
-                  <img
-                    src="./Shipping/JNE.png"
-                    alt="JNE"
-                    className="w-16"
-                  />
+                  <img src="./Shipping/JNE.png" alt="JNE" className="w-16" />
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="shipping" />
@@ -157,27 +145,15 @@ const OrderDetail = () => {
               <div className="grid grid-cols-2 gap-4">
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="payment" />
-                  <img
-                    src="./Payment/bri.png"
-                    alt="BRI"
-                    className="w-16"
-                  />
+                  <img src="./Payment/bri.png" alt="BRI" className="w-16" />
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="payment" />
-                  <img
-                    src="./Payment/bca.png"
-                    alt="BCA"
-                    className="w-16"
-                  />
+                  <img src="./Payment/bca.png" alt="BCA" className="w-16" />
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="payment" />
-                  <img
-                    src="./Payment/dana.png"
-                    alt="Dana"
-                    className="w-16"
-                  />
+                  <img src="./Payment/dana.png" alt="Dana" className="w-16" />
                 </label>
                 <label className="flex items-center space-x-2">
                   <input type="radio" name="payment" />
@@ -209,7 +185,8 @@ const OrderDetail = () => {
                 alt="Verified"
                 className="w-16 h-16 mx-auto mb-4"
               />
-              <a href="/order-complete-page"
+              <a
+                href="/order-complete-page"
                 className="bg-red-500 text-white px-4 py-2 rounded"
                 onClick={() => setIsPaymentVerified(false)}
               >

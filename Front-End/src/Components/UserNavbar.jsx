@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
-import { FaSearch, FaUserCircle } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
 
@@ -22,7 +23,7 @@ const UserNavbar = () => {
   };
 
   return (
-    <>
+    <nav>
       <div className="fixed w-full z-50">
         <div className="flex flex-row justify-between p-5 md:px-10 bg-[#E53935] shadow-[0_3px_10px_rgba(0,0,0,0.2)]">
           {/* Logo */}
@@ -30,34 +31,16 @@ const UserNavbar = () => {
           {/* End Logo */}
 
           {/* UserNavbar*/}
-          <nav className="hidden md:flex flex-row items-center font-Poppins text-base  gap-4">
-            <Link
-              to="/home"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className="text-white hover:text-gray-300"
-            >
+          <div className="hidden md:flex flex-row items-center font-Poppins text-base  gap-4">
+            <Link to="/home" className="text-white hover:text-gray-300">
               Beranda
             </Link>
 
-            <Link
-              to="/product"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className="text-white hover:text-gray-300"
-            >
+            <Link to="/product" className="text-white hover:text-gray-300">
               Produk
             </Link>
 
-            <Link
-              to="/about"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className="text-white hover:text-gray-300"
-            >
+            <Link to="/about" className="text-white hover:text-gray-300">
               Tentang
             </Link>
 
@@ -65,7 +48,7 @@ const UserNavbar = () => {
               <FaSearch className="text-[#E53935]" />
               <input
                 type="text"
-                placeholder="Cari di Snackin"
+                placeholder="Mau cari apa?"
                 className="outline-none text-sm font-Poppins"
               />
             </div>
@@ -85,8 +68,8 @@ const UserNavbar = () => {
                   aria-haspopup="true"
                   onClick={toggleDropdown}
                 >
-                  <div className="flex bg-[#E53935] text-white rounded-full items-center px- py- ">
-                    <FaUserCircle className="size-8" />
+                  <div className="flex bg-[#E53935] text-white rounded-full items-center size-8 ">
+                    <img src="Avatar/Avatar1.png" alt="" />
                   </div>
                 </button>
               </div>
@@ -101,35 +84,34 @@ const UserNavbar = () => {
                   <div className="py-1" role="none">
                     <a className="flex items-center px-4 py-2 text-sm text-gray-700">
                       <img
-                        src="./Avatar/Avatar1.png"
+                        src="Avatar/Avatar1.png"
                         alt=""
                         className="w-8 h-8 mr-2"
                       />
-                      mgilangggggg
+                      Alleia
                     </a>
-
                     <hr />
                     <Link
-                      to="/profile"
+                      to="/myprofile"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
                     >
                       Profile Saya
                     </Link>
-                    <a
-                      href="/404"
+                    <Link
+                      to="http://localhost:5174"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
                     >
-                      Buat Toko
-                    </a>
-                    <a
-                      href="/profileSettings"
+                      Toko Saya
+                    </Link>
+                    <Link
+                      to="/setting"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
                     >
                       Pengaturan
-                    </a>
+                    </Link>
                     <Link
                       to="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -141,7 +123,7 @@ const UserNavbar = () => {
                 </div>
               )}
             </div>
-          </nav>
+          </div>
           {/* End Navbar */}
 
           {/* Hamburger */}
@@ -159,43 +141,17 @@ const UserNavbar = () => {
             menu ? "translate-x-0" : "-translate-x-full"
           } lg:hidden flex flex-col absolute bg-[#E53935] text-white left-0 top-20 text-base font-Poppins text-center pt-4 pb-4 gap-8 w-full h-fit transition-transform duration-300`}
         >
-          <Link
-            to="/"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className="text-white hover:text-gray-300"
-          >
+          <Link to="/" className="text-white hover:text-gray-300">
             Beranda
           </Link>
 
-          <Link
-            to="/product"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className="text-white hover:text-gray-300"
-          >
+          <Link to="/product" className="text-white hover:text-gray-300">
             Produk
           </Link>
 
-          <Link
-            to="/about"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className="text-white hover:text-gray-300"
-          >
+          <Link to="/about" className="text-white hover:text-gray-300">
             Tentang
           </Link>
-
-          <div>
-            <input
-              type="text"
-              placeholder="Cari"
-              className="px-2 py-1 rounded-full"
-            />
-          </div>
 
           <Link
             to="/signin"
@@ -213,7 +169,7 @@ const UserNavbar = () => {
         </div>
         {/* End Hamburger */}
       </div>
-    </>
+    </nav>
   );
 };
 

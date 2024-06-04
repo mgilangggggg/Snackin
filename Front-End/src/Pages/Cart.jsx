@@ -15,14 +15,6 @@ const Cart = () => {
       quantity: 1,
       image: "./Product/Basreng-Sajodo.png",
     },
-    {
-      id: 2,
-      name: "Keripik Kaca",
-      variation: "Ekstra Pedas/500 gr",
-      price: 25000,
-      quantity: 1,
-      image: "./Product/Keripik-Kaca.png",
-    },
   ]);
 
   const [isPaymentVerified, setIsPaymentVerified] = useState(false);

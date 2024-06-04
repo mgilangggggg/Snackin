@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+
 import UserNavbar from "../Components/UserNavbar";
 import UserFooter from "../Components/UserFooter";
 import Rating from "../Components/Rating";
-import { Link } from "react-router-dom"; // Tambahkan import ini
+import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
-import { BiArrowFromRight } from "react-icons/bi";
-import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 const DetailProduct = () => {
   const product = {
@@ -15,11 +14,11 @@ const DetailProduct = () => {
       "./Product/Basreng-Sajodo.png",
       "./Product/Basreng-Sulah-Viral.png",
     ],
-    name: "Basreng Sajodo",
+    name: "Basreng Sulah Viral 500gram pedas",
     desc: "Basreng pedas yang berkualitas, tersedia dalam berbagai pilihan rasa.",
     rating: 4,
-    originalPrice: 50000,
-    discountPercentage: 2,
+    originalPrice: 30000,
+    discountPercentage: 12,
   };
 
   const detailProductInfo = {
@@ -28,7 +27,13 @@ const DetailProduct = () => {
     name: "Gumilang Snack",
     location: "Perbatasan Ciamis - Majalengka",
     desc: "Basreng viral yang kami jual terjamin kualitasnya, karena diproduksi dari bahan pilihan yang dijamin enak dan gurih rasanya. Buruan beli sebelum kehabisan ;)",
-    variants: ["Pedas Manis", "Pedas Daun Jeruk", "Ekstra Pedas", "Original"],
+    variants: [
+      "Pedas",
+      "Pedas Manis",
+      "Pedas Daun Jeruk",
+      "Ekstra Pedas",
+      "Original",
+    ],
     availableInPackaging: [
       {
         weight: "250 gr",
@@ -211,9 +216,19 @@ const DetailProduct = () => {
     );
   };
 
+  const [showToast, setShowToast] = useState(false);
+
   const addToCart = () => {
+    // Tambahkan produk ke keranjang
     setCart([...cart, product]);
-    alert(`${product.name} telah ditambahkan ke keranjang!`);
+
+    // Set toast message menjadi true
+    setShowToast(true);
+
+    // Setelah 2 detik, atur toast message menjadi false
+    setTimeout(() => {
+      setShowToast(false);
+    }, 2000);
   };
 
   const discountedAmount =
@@ -283,12 +298,17 @@ const DetailProduct = () => {
               >
                 Beli Sekarang
               </Link>
-              <button
+
+              <button onClick={addToCart}>Tambah ke Keranjang</button>
+              {showToast && (
+                <div className="toast">Produk ditambahkan ke keranjang!</div>
+              )}
+              {/* <Link
                 className="bg-gray-200 text-gray-700 py-2 px-4 rounded-lg"
                 onClick={addToCart}
               >
                 Masukkan Keranjang
-              </button>
+              </Link> */}
             </div>
 
             <div className="flex items-center mt-4">

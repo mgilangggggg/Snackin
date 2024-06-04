@@ -1,26 +1,26 @@
 import React from "react";
-import Nav from "../Components/Nav";
-import Footer from "../Components/Footer";
-import { MdOutlineEdit } from "react-icons/md";
-import { Link } from "react-router-dom";
 
-const Profile = () => {
+import UserNavbar from "../Components/UserNavbar";
+import { Link } from "react-router-dom";
+import { MdOutlineEdit } from "react-icons/md";
+import Footer from "../Components/Footer";
+
+const MyProfile = () => {
   return (
     <main>
       {/* Navbar */}
-      <Nav />
+      <UserNavbar />
       {/* End Navbar */}
-
-      <div className="w-full">
+      <div className="py-16">
         <img src="./tropical-beach.png" alt="" />
       </div>
       <div className="pt-4 px-[100px] mb-36 bg-no-repeat">
         <a className="flex items-center rounded-lg group font-medium text-[25px] mb-10 pt-[20px]">
-          <img className="w-30 h-30" src="./Profile/Kevin.png"></img>
+          <img src="Avatar/Avatar1.png" alt="" />
           <Link className="mt-11 mr-4 -ml-3">
             <MdOutlineEdit />
           </Link>
-          <span className="flex-1 whitespace-nowrap -ml-2">Kevin</span>
+          <span className="flex-1 whitespace-nowrap -ml-2">Alleia</span>
           <Link
             to=""
             className="text-white bg-[#E53935] font-medium rounded-lg text-sm px-10 py-2.5 text-end"
@@ -38,7 +38,7 @@ const Profile = () => {
                 type="text"
                 id="first_name"
                 className="bg-white border-2 border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="Kevin Sanjaya"
+                placeholder="Alleia Anata Irham"
                 disabled
               />
             </div>
@@ -50,7 +50,7 @@ const Profile = () => {
                 type="text"
                 id="last_name"
                 className="bg-white border-2 border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="15-3-1999"
+                placeholder="01-01-1999"
                 disabled
               />
             </div>
@@ -62,57 +62,19 @@ const Profile = () => {
                 type="text"
                 id="company"
                 className="bg-white border-2 border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="kevinsa*****@gmail.com"
+                placeholder="alleia*****@gmail.com"
                 disabled
               />
             </div>
             <div>
               <label className="block mb-2 text-sm font-medium text-blac">
-                Kecamatan
-              </label>
-              <input
-                type="text"
-                id="phone"
-                className="bg-white border-2 border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="123-45-678"
-                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                disabled
-              />
-            </div>
-            <div>
-              <label className="block mb-2 text-sm font-medium text-blac">
-                No. Handphone
+                No. Telpon
               </label>
               <input
                 type="text"
                 id="phone"
                 className="bg-white border-2 border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 placeholder="089213****"
-                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                disabled
-              />
-            </div>
-            <div>
-              <label className="block mb-2 text-sm font-medium text-black">
-                RT / RW
-              </label>
-              <input
-                type="text"
-                id="last_name"
-                className="bg-white border-2 border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="15-3-1999"
-                disabled
-              />
-            </div>
-            <div>
-              <label className="block mb-2 text-sm font-medium text-blac">
-                Kelurahan / Desa
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="bg-white border-2 border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="john.doe@company.com"
                 disabled
               />
             </div>
@@ -140,4 +102,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default MyProfile;

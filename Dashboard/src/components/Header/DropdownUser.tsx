@@ -102,7 +102,7 @@ const DropdownUser = () => {
                   fill=""
                 />
               </svg>
-              Profile Saya
+              Profile Toko
             </Link>
           </li>
           <li>
@@ -131,7 +131,10 @@ const DropdownUser = () => {
             </Link>
           </li>
         </ul>
-        <button className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-[#E53935] lg:text-base">
+        <Link
+          to="http://localhost:5173/home"
+          className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-[#E53935] lg:text-base"
+        >
           <svg
             className="fill-current"
             width="22"
@@ -150,7 +153,7 @@ const DropdownUser = () => {
             />
           </svg>
           Keluar
-        </button>
+        </Link>
       </div>
       {/* <!-- Dropdown End --> */}
     </div>

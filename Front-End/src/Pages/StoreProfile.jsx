@@ -1,4 +1,5 @@
 import React from "react";
+
 import UserNavbar from "../Components/UserNavbar";
 import { MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -222,7 +223,7 @@ const StoreProfile = () => {
         {/* New Product */}
         <div className="font-Poppins text-lg py-4">
           <h1 className="font-medium py-4 text-2xl">Produk</h1>
-          <div className="container flex flex-wrap">
+          <Link to="/detail-product" className="container flex flex-wrap">
             {Product.map((product) => {
               // Calculate the discount amount
               const discountedAmount =
@@ -274,7 +275,7 @@ const StoreProfile = () => {
                 </div>
               );
             })}
-          </div>
+          </Link>
         </div>
         {/* See More */}
         <div className="flex items-center justify-center mt-10">
