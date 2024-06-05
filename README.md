@@ -48,16 +48,16 @@ npm install
 - [x] Filter Product By Category (Aji)
 - [x] Completed Order Page (Aji)
 - [x] Details Product Page (M. Gilang)
-- [ ] Add Cart Page
-- [ ] Checkout Page
-- [ ] Dashboard Admin Toko: Landing Page (M. Gilang), My Products, Sales, Orders, Promotions, Earnings In Progress ⏳
+- [ ] Pesanan saya
+- [ ] Penilaian saya
+- [ ] Dashboard Admin Toko: Landing Page, Profile Toko, Settings (M. Gilang), My Products, Sales, Orders, Promotions, Earnings In Progress ⏳
   
 ##### Back-End
-- [ ] Setup express.js
+- [x] Setup express.js (M. Gilang)
 - [ ] Controller, Query, Routing
 - [ ] Authentication: SignIn, SignUp, Reset
 - [ ] Product
-- [ ] Database
+- [x] Database (M. Gilang) In Progress ⏳
 - [ ] Dashboard Admin Toko: Create, Read, Update, Delete (CRUD)
 
 ### Our Team
