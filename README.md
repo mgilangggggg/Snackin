@@ -55,8 +55,8 @@ npm install
 ##### Back-End
 - [x] Database (M. Gilang)
 - [x] Express: Configuration and Connection (M. Gilang) 
-- [ ] Express: Controller, Query, Routing ()
-- [ ] Authentication ()
+- [ ] Express: Controller, Query, Routing
+- [ ] Authentication
 - [ ] Dashboard Admin Toko: CRUD: Create, Read, Update, Delete
 
 ### Our Team
