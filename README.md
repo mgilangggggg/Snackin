@@ -53,12 +53,11 @@ npm install
 - [ ] Dashboard Admin Toko: Landing Page, Profile Toko, Settings (M. Gilang), My Products, Sales, Orders, Promotions, Earnings In Progress ⏳
   
 ##### Back-End
-- [x] Setup express.js (M. Gilang)
-- [ ] Controller, Query, Routing
-- [ ] Authentication: SignIn, SignUp, Reset
-- [ ] Product
-- [x] Database (M. Gilang) In Progress ⏳
-- [ ] Dashboard Admin Toko: Create, Read, Update, Delete (CRUD)
+- [x] Database (M. Gilang)
+- [x] Express: Configuration and Connection (M. Gilang) 
+- [ ] Express: Controller, Query, Routing ()
+- [ ] Authentication ()
+- [ ] Dashboard Admin Toko: CRUD: Create, Read, Update, Delete
 
 ### Our Team
 
