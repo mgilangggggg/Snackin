@@ -1,60 +1,117 @@
-
-# <h1 align="center">Snackin</h1>
-
-Link Website: https://snackin-testing.vercel.app
-
-###############################################
+<h1 align="center">Snackin</h1>
 
 ## Configuration & Information
 ```bash
 ```
 
 
-## How to install
+## Running the Application
+
+Follow these steps to run the application:
+
+### 1. Clone the repository:
+
 ```bash
+git clone https://github.com/mgilangggggg/Snackin.git
+```
+### 2. Navigate to the project directory:
+
+```bash
+cd Snackin
+```
+
+### 3. Install Dependencies for Each Part
+You need to install dependencies separately for the frontend, backend, and admin:
+
+FrontEnd
+Navigate to the `FrontEnd` directory and install dependencies:
+
+```bash
+cd FrontEnd
 npm install
 ```
 
-```bash
+Backend
+Navigate to the `BackEnd` directory and install dependencies:
 
+```bash
+cd ../BackEnd
+npm install 
 ```
 
-## How to run
+Admin
+Navigate to the `Admin` directory and install dependencies:
+
 ```bash
-1. Clone poject dari repositori https://github.com/mgilangggggg/Snackin
-3. Setelah Clone masuk ke direktori Snackin lalu install jalankan perintah "npm install" di terminal
-2. Lalu jalankan perintah "npm run dev" untuk menjalankan aplikasi
-3. 
+cd ../Admin
+npm install
 ```
 
-### List Pages
+### 4. Start the development server:
+
+You will need to use three terminals to run the frontend, backend, and admin separately:
+
+Terminal 1: FrontEnd
+Navigate to the `FrontEnd` directory and start the development server:
+
+```bash
+cd FrontEnd
+npm run dev
+```
+
+Terminal 2: BackEnd
+Navigate to the `BackEnd` directory and start the backend server:
+
+```bash
+cd BackEnd
+npm run start
+```
+
+Terminal 3: Admin
+Navigate to the `Admin` directory and start the admin server:
+
+```bash
+cd Admin
+npm run dev
+```
+
+### List of Pages
 ##### Front-End
-- [x] Setup a React project (M. Gilang)
-- [x] Routing (All Everyone)
-- [x] Home Page: Navbar, Carousel, CategoryProduct, NewProduct, Forum, StoreChoise, Footer (M. Gilang)
-- [x] Authentication: SignIn, SignUp, Reset (M. Gilang)
-- [x] 404 Pages (M. Gilang)
-- [x] User Home Page: UserNavbar, Carousel, CategoryProduct, NewProduct, Forum, StoreChoise, Footer (M. Gilang)
-- [x] Product Page (M. Gilang)
-- [x] About Us (Aji)
-- [x] Shopping Cart Page (M. Gilang)
-- [x] Order Details Page (Aji)
-- [x] Store Profile Page (M. Gilang)
-- [x] Profile User (Bella)
-- [x] My Order Page (Aji) On Progress ⏳
-- [x] My Profile Page (Bella) On Progress ⏳
-- [x] My Rating Page (Bella) On Progress ⏳
-- [x] Setting Account Page (Bella)
-- [x] Filter Product By Category (Aji)
-- [x] Completed Order Page (Aji)
-- [x] Details Product Page (M. Gilang)
-- [ ] Pesanan saya
-- [ ] Penilaian saya
-- [ ] Dashboard Admin Toko: Landing Page, Profile Toko, Settings (M. Gilang), My Products, Sales, Orders, Promotions, Earnings In Progress ⏳
-  
+- [x] Setup a React Project by `M. Gilang`
+- [x] Routing by `All members of the Hacker role`
+- [x] Home Pages: Navbar, Carousel, Categories, New Products, Store Selection, Seller & Buyer Forum, Footer by `M. Gilang`
+- [x] Auth Pages: SignIn, SignUp, Reset by `M. Gilang`
+- [x] 404 Pages by `M. Gilang`
+- [x] User Home Pages: User Navbar, Carousel, Categories, New Products, Store Selection, Seller & Buyer Forum, Footer by `M. Gilang`
+- [x] Product Pages by `M. Gilang`
+- [x] Filter Products By Category by `Aji`
+- [x] About by `Aji`
+- [x] Halaman Keranjang Belanja by `M. Gilang`
+- [x] Order Details Page by `Aji`
+- [x] Product Details Pages by `M. Gilang`
+- [x] Completed Order Pages by `Aji`
+- [x] My Profile Pages by `Bella`
+- [x] Setting Pages by `Bella`
+- [ ] My Order Pages by `Aji` On Progress ⏳
+- [ ] My Rating Pages by `Bella` On Progress ⏳
+- [ ] Search for products in search
+
+##### Dashbord Admin
+- [x] Landing Pages by `M. Gilang`
+- [x] Store Profile Pages by `M. Gilang`
+- [ ] My Product Pages
+- [ ] Sales Pages
+- [ ] Order Pages
+- [ ] Promotion Pages
+- [ ] Earnings Pages
+- [x] Setting Pages by `M. Gilang`
+
+===========================================
+
 ##### Back-End
-- [x] Database (M. Gilang)
-- [x] Express: Configuration and Connection (M. Gilang) 
+- [x] Express: Configuration and Connection by `M. Gilang`
+- [X] ERD design by `M. Gilang`
+- [x] Database `M. Gilang`
 - [ ] Express: Controller, Query, Routing
 - [ ] Authentication
 - [ ] Dashboard Admin Toko: CRUD: Create, Read, Update, Delete
