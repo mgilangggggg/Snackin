@@ -111,8 +111,8 @@ npm run dev
 ##### Back-End
 - [x] Express: Configuration and Connection by `M. Gilang`
 - [X] ERD design by `M. Gilang`
-- [x] Database `M. Gilang`
-- [ ] Express: Controller, Query, Routing
+- [x] Database by `M. Gilang`
+- [ ] Express: Controller, Query, Routing by `M. Gilang` On Progress ⏳
 - [ ] Authentication
 - [ ] Dashboard Admin Toko: CRUD: Create, Read, Update, Delete
 
