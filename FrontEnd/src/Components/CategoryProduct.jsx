@@ -6,23 +6,28 @@ const CategoryProduct = () => {
   const category1 = [
     {
       id: 1,
-      image: "./Category-Product/Biskuit.png",
-      title: "Biskuit",
+      image: "./Category-Product/Keripik.png",
+      title: "Keripik & Kerupuk",
     },
     {
       id: 2,
       image: "../Category-Product/Kue-Kering.png",
-      title: "Kue Kering",
+      title: "Kue & Biskuit",
     },
     {
       id: 3,
       image: "./Category-Product/Basreng.png",
-      title: "Basreng",
+      title: "Permen & Manisan",
     },
     {
-      id: 4,
+      id: 1,
       image: "./Category-Product/Keripik.png",
-      title: "Keripik",
+      title: "Kacang",
+    },
+    {
+      id: 5,
+      image: "./Category-Product/Keripik.png",
+      title: "Minuman",
     },
   ];
 
@@ -30,22 +35,27 @@ const CategoryProduct = () => {
     {
       id: 1,
       image: "./Category-Product/Keripik.png",
-      title: "Kerupuk",
+      title: "Oleh - Oleh",
+    },
+    {
+      id: 4,
+      image: "./Category-Product/Basreng.png",
+      title: "Camilan Tradisional",
     },
     {
       id: 2,
       image: "./Category-Product/Keripik.png",
-      title: "Olahan Pisang",
+      title: "Camilan Sehat",
     },
     {
       id: 3,
       image: "./Category-Product/Kacang-Kacangan.png",
-      title: "Kacang - Kacangan",
+      title: "Best Seller",
     },
     {
       id: 4,
       image: "./Category-Product/Keripik.png",
-      title: "Kue Basah",
+      title: "Lainnya",
     },
   ];
   // End Catergory Product
@@ -57,7 +67,7 @@ const CategoryProduct = () => {
         <h1 className="font-medium py-4 text-2xl">Kategori</h1>
         <Link
           to="/product"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5"
         >
           {category1.map((category) => (
             <div
@@ -82,7 +92,7 @@ const CategoryProduct = () => {
       <div className="font-Poppins text-lg px-10">
         <Link
           to="/product"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5"
         >
           {category2.map((category) => (
             <div
