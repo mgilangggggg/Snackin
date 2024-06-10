@@ -113,6 +113,7 @@ npm run dev
 - [X] ERD design by `M. Gilang`
 - [x] Database by `M. Gilang`
 - [ ] Express: Controller, Query, Routing by `M. Gilang` On Progress ⏳
+- [ ] Express: Middleware, Multer, Handling Error
 - [ ] Authentication
 - [ ] Dashboard Admin Toko: CRUD: Create, Read, Update, Delete
 
