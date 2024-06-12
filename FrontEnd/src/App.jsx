@@ -15,6 +15,7 @@ import OrderCompltePage from "./Pages/OrderCompletePage";
 import OrderDetail from "./Pages/OrderDetail";
 import StoreProfile from "./Pages/StoreProfile";
 import MyProfile from "./Pages/MyProfile";
+import MyOrder from "./Pages/MyOrder";
 import ProfileSettings from "./Pages/ProfileSettings";
 import NotFound from "./Pages/404/NotFound";
 
@@ -44,6 +45,7 @@ function App() {
           <Route path="/store-profile" element={<StoreProfile />} />
           <Route path="/detail-product" element={<DetailProduct />} />
           <Route path="/order-detail" element={<OrderDetail />} />
+          <Route path="/myorder" element={<MyOrder />} />
           <Route path="/order-complete-page" element={<OrderCompltePage />} />
 
           <Route path="/setting" element={<ProfileSettings />} />

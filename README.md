@@ -92,15 +92,15 @@ npm run dev
 - [x] Completed Order Pages by `Aji`
 - [x] My Profile Pages by `Bella`
 - [x] Setting Pages by `Bella`
-- [ ] My Order Pages by `Aji` On Progress ⏳
+- [x] My Order Pages by `Aji`
 - [ ] My Rating Pages by `Bella` On Progress ⏳
 - [ ] Search for products in search
 
 ##### Dashbord Admin
 - [x] Landing Pages by `M. Gilang`
 - [x] Store Profile Pages by `M. Gilang`
-- [ ] My Product Pages
-- [ ] Sales Pages
+- [ ] My Product Pages by `Aji` On Progress ⏳
+- [x] Sales Pages
 - [ ] Order Pages
 - [ ] Promotion Pages
 - [ ] Earnings Pages
