@@ -86,7 +86,7 @@ npm run dev
 - [x] Product Pages by `M. Gilang`
 - [x] Filter Products By Category by `Aji`
 - [x] About by `Aji`
-- [x] Halaman Keranjang Belanja by `M. Gilang`
+- [x] Shopping Cart Page by `M. Gilang`
 - [x] Order Details Page by `Aji`
 - [x] Product Details Pages by `M. Gilang`
 - [x] Completed Order Pages by `Aji`
