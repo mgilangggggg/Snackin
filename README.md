@@ -100,7 +100,7 @@ npm run dev
 - [x] Landing Pages by `M. Gilang`
 - [x] Store Profile Pages by `M. Gilang`
 - [ ] My Product Pages by `Aji` On Progress ⏳
-- [x] Sales Pages
+- [x] Sales Pages `Aji`
 - [ ] Order Pages
 - [ ] Promotion Pages
 - [ ] Earnings Pages
