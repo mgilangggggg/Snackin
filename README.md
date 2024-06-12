@@ -114,7 +114,7 @@ npm run dev
 - [x] Database by `M. Gilang`
 - [ ] Express: Controller, Query, Routing by `M. Gilang` On Progress ⏳
 - [ ] Express: Middleware, Multer, Handling Error
-- [ ] Authentication
+- [ ] Authentication by `M. Gilang` On Progree ⏳
 - [ ] Dashboard Admin Toko: CRUD: Create, Read, Update, Delete
 
 ### Our Team
