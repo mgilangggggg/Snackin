@@ -1,31 +1,30 @@
-import mysql from "mysql2/promise";
-
-import dotenv from "dotenv";
-dotenv.config();
+import mysql from 'mysql2/promise';
+import 'dotenv/config';
 
 const db = mysql.createPool({
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    database: process.env.DATABASE,
 });
 
-async function testConnection() {
+const testConnection = async () => {
     try {
         await db.getConnection();
-        console.log("Terhubung ke database");
-    } catch (error) {
-        console.log("Gagal terhubung ke database", error);
+        console.log('Connection to database successful!');
+    } catch (e) {
+        console.log('Failed connect to database:', e.message);
     }
-}
+};
 
-async function query(command, values) {
+const query = async (query, values) => {
     try {
-        const [value] = await db.query(command, values ?? []);
-        return value;
-    } catch (error) {
-        console.log(error);
+        const [result] = await db.query(query, values ?? []);
+        return result;
+    } catch (e) {
+        console.log('Failed to execute query:', e.message);
+        return null;
     }
-}
+};
 
-export { query, testConnection };
+export { testConnection, query };
