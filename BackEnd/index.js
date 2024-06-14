@@ -15,5 +15,5 @@ app.use(Snackin);
 
 app.listen(process.env.APP_PORT, async () => {
     await testConnection();
-    console.log(`\n🚥 Server is running at http://localhost:${process.env.APP_PORT}`);
+    console.log(`\n🚥 Server is running at http://localhost:${process.env.APP_PORT}\n`);
 });
