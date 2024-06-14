@@ -11,9 +11,9 @@ const db = mysql.createPool({
 const testConnection = async () => {
     try {
         await db.getConnection();
-        console.log('Connection to database successful!');
+        console.log('\n✅ Connection to database successful!');
     } catch (e) {
-        console.log('Failed connect to database:', e.message);
+        console.log('\n❎ Failed connect to database:', e.message);
     }
 };
 
@@ -22,7 +22,7 @@ const query = async (query, values) => {
         const [result] = await db.query(query, values ?? []);
         return result;
     } catch (e) {
-        console.log('Failed to execute query:', e.message);
+        console.log('\n❎ Failed to execute query:', e.message, '\n');
         return null;
     }
 };
