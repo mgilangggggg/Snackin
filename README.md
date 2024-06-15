@@ -99,11 +99,11 @@ npm run dev
 ##### Dashbord Admin
 - [x] Landing Pages by `M. Gilang`
 - [x] Store Profile Pages by `M. Gilang`
-- [ ] My Product Pages by `Aji` On Progress ⏳
-- [x] Sales Pages `Aji`
-- [ ] Order Pages
-- [ ] Promotion Pages
-- [ ] Earnings Pages
+- [x] My Product Pages by `Aji`
+- [x] Sales Pages by `Aji`
+- [x] Order Pages by `Aji`
+- [x] Promotion Pages by `Aji`
+- [x] Earnings Pages by `Aji`
 - [x] Setting Pages by `M. Gilang`
 
 ===========================================

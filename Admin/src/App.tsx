@@ -12,7 +12,11 @@ import FormLayout from './pages/Form/FormLayout';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Sales from './pages/Sales';
+import AddProductForm from './pages/FormAddProduct';
 import Tables from './pages/Tables';
+import Promosi from './pages/Promosi';
+import Earnings from './pages/Earnings';
+import OrderPage from './pages/OrderPage';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 
@@ -82,7 +86,7 @@ function App() {
           path="/tables"
           element={
             <>
-              <PageTitle title="Tables | Snackin" />
+              <PageTitle title="My Product | Snackin" />
               <Tables />
             </>
           }
@@ -102,6 +106,33 @@ function App() {
             <>
               <PageTitle title="Sales | Snackin" />
               <Sales />
+            </>
+          }
+          />
+          <Route
+          path="/OrderPage"
+          element={
+            <>
+              <PageTitle title="Pesanan | Snackin" />
+              <OrderPage />
+            </>
+          }
+          />
+          <Route
+          path="/Promosi"
+          element={
+            <>
+              <PageTitle title="Promosi Toko | Snackin" />
+              <Promosi />
+            </>
+          }
+          />
+          <Route
+          path="/Earnings"
+          element={
+            <>
+              <PageTitle title="Penghasilan | Snackin" />
+              <Earnings />
             </>
           }
         />
@@ -140,7 +171,16 @@ function App() {
               <SignUp />
             </>
           }
-        />
+          />
+          <Route
+          path="/pages/FormAddProduct"
+          element={
+            <>
+              <PageTitle title="Add Product | Snackin" />
+              <AddProductForm />
+            </>
+          }
+          />
       </Routes>
     </>
   );
