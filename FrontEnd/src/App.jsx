@@ -18,6 +18,7 @@ import MyProfile from "./Pages/MyProfile";
 import MyOrder from "./Pages/MyOrder";
 import ProfileSettings from "./Pages/ProfileSettings";
 import NotFound from "./Pages/404/NotFound";
+import MyRating from "./Pages/MyRating";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/myrating" element={<MyRating />} />
 
           {/* Content */}
           <Route path="/forum" element={<Forum />} />

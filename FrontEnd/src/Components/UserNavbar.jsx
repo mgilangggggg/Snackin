@@ -106,6 +106,13 @@ const UserNavbar = () => {
                       Toko Saya
                     </Link>
                     <Link
+                      to="/myrating"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      role="menuitem"
+                    >
+                      Penilaian Saya
+                    </Link>
+                    <Link
                       to="/setting"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
