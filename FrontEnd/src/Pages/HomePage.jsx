@@ -27,13 +27,13 @@ const HomePage = () => {
       <NewProduct />
       {/* End New Product */}
 
-      {/* Seller & Buyer Forum */}
-      <Forum />
-      {/* End Seller & Buyer Forum */}
-
       {/* Store Choice */}
       <StoreChoise />
       {/* End Store Choice */}
+
+      {/* Seller & Buyer Forum */}
+      <Forum />
+      {/* End Seller & Buyer Forum */}
 
       {/* Footer */}
       <Footer />

@@ -20,7 +20,7 @@ const SellerBuyerForum = () => {
   return (
     <>
       {/* Seller & Buyer Forum */}
-      <div className="font-Poppins text-lg px-3 pt-10">
+      <div className="font-Poppins text-lg px-3 pt-10 pb-20">
         <h1 className="font-medium py-4 text-2xl text-center">
           Forum Penjual & Pembeli
         </h1>
