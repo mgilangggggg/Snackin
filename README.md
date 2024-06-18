@@ -110,10 +110,10 @@ npm run dev
 
 ##### Back-End
 - [x] Express: Configuration and Connection by `M. Gilang`
-- [X] ERD design by `M. Gilang`
+- [X] <a href="https://drive.google.com/file/d/1sBeBkDvYuuJJgRMuitXpTHM3keQIP5Ki/view?usp=sharing">ERD design</a> by `M. Gilang`
 - [x] Database by `M. Gilang`
-- [ ] Express: Controller, Query, Routing by `M. Gilang` On Progress ⏳
-- [ ] Express: Middleware, Multer, Handling Error
+- [x] Express: Controller, Query, Routing by `M. Gilang`
+- [ ] Express: Middleware, Multer, Handling Error by `M. Gilang` On Progree ⏳
 - [ ] Authentication by `M. Gilang` On Progree ⏳
 - [ ] Dashboard Admin Toko: CRUD: Create, Read, Update, Delete
 
