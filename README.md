@@ -93,8 +93,8 @@ npm run dev
 - [x] My Profile Pages by `Bella`
 - [x] Setting Pages by `Bella`
 - [x] My Order Pages by `Aji`
-- [ ] My Rating Pages by `Bella` On Progress ⏳
-- [ ] Search for products in search
+- [x] My Rating Pages by `Bella`
+- [x] Search for products in search `Bella` On Progress ⏳
 
 ##### Dashbord Admin
 - [x] Landing Pages by `M. Gilang`
