@@ -5,7 +5,7 @@ const Logo = () => {
   const Logo = [
     {
       logo: "./Snackin.png",
-      name: "Snackin-Logo",
+      name: "Snackin",
     },
   ];
 

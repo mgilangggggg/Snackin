@@ -99,8 +99,8 @@ function App() {
               <Settings />
             </>
           }
-          />
-          <Route
+        />
+        <Route
           path="/sales"
           element={
             <>
@@ -108,8 +108,8 @@ function App() {
               <Sales />
             </>
           }
-          />
-          <Route
+        />
+        <Route
           path="/OrderPage"
           element={
             <>
@@ -117,8 +117,8 @@ function App() {
               <OrderPage />
             </>
           }
-          />
-          <Route
+        />
+        <Route
           path="/Promosi"
           element={
             <>
@@ -126,8 +126,8 @@ function App() {
               <Promosi />
             </>
           }
-          />
-          <Route
+        />
+        <Route
           path="/Earnings"
           element={
             <>
@@ -171,8 +171,8 @@ function App() {
               <SignUp />
             </>
           }
-          />
-          <Route
+        />
+        <Route
           path="/pages/FormAddProduct"
           element={
             <>
@@ -180,7 +180,7 @@ function App() {
               <AddProductForm />
             </>
           }
-          />
+        />
       </Routes>
     </>
   );

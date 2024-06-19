@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../Components/UserNavbar";
 import UserFooter from "../Components/UserFooter";
+import Team from "../Components/Team";
 
 const About = () => {
   return (
@@ -87,6 +88,7 @@ const About = () => {
             </p>
           </div>
         </section>
+        <Team />
       </main>
       <UserFooter />
     </>

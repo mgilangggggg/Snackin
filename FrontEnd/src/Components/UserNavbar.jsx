@@ -99,11 +99,11 @@ const UserNavbar = () => {
                       Profile Saya
                     </Link>
                     <Link
-                      to="http://localhost:5174"
+                      to="/myorder"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
                     >
-                      Toko Saya
+                      Pesanan Saya
                     </Link>
                     <Link
                       to="/myrating"
@@ -111,6 +111,13 @@ const UserNavbar = () => {
                       role="menuitem"
                     >
                       Penilaian Saya
+                    </Link>
+                    <Link
+                      to="http://localhost:5174/auth/signin"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      role="menuitem"
+                    >
+                      Toko Saya
                     </Link>
                     <Link
                       to="/setting"

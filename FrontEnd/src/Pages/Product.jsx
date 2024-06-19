@@ -56,106 +56,117 @@ const Product = () => {
       {/* End Navbar */}
 
       <div className="font-Poppins text-lg px-10 py-32">
-        {/* Category */}
-        <div className="flex items-center space-x-3">
-          <h1 className="font-medium py-4 text-2xl">Kategori </h1>
-          <button
-            onClick={() => setSelectedCategory("")}
-            className={`px-4 py-1 text-sm rounded-full border ${
-              selectedCategory === ""
-                ? "bg-[#E53935] text-white"
-                : "text-[#E53935] border-[#E53935] hover:bg-red-50"
-            }`}
-          >
-            Semua Kategori
-          </button>
-          {categories.map((category) => (
-            <button
-              key={category.id_kategori}
-              onClick={() => setSelectedCategory(category.id_kategori)}
-              className={`px-4 py-1 text-sm rounded-full border ${
-                selectedCategory === category.id_kategori
-                  ? "bg-[#E53935] text-white"
-                  : "text-[#E53935] border-[#E53935] hover:bg-red-50"
-              }`}
-            >
-              {category.nama_kategori}
-            </button>
-          ))}
-        </div>
-        {/* End Category */}
-
-        {/* Product */}
-        <div className="container flex flex-wrap">
-          {filteredProducts.slice(0, visibleProducts).map((product) => {
-            // Calculate the discount amount
-            const discountedAmount =
-              (product.diskon_produk / 100) * product.harga_produk;
-
-            // Calculate the price after discount
-            const discountedPrice = product.harga_produk - discountedAmount;
-            return (
-              <Link
-                to="/detail-product"
-                key={product.id_produk}
-                className="w-full md:w-1/2 lg:w-1/6 p-1"
+        <div className="flex">
+          {/* Category */}
+          <div className="w-1/4 pr-4">
+            <h1 className="font-medium py-4 text-2xl">Kategori</h1>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setSelectedCategory("")}
+                className={`flex-1 min-w-[45%] px-4 py-2 text-sm rounded-full border ${
+                  selectedCategory === ""
+                    ? "bg-[#E53935] text-white"
+                    : "text-[#E53935] border-[#E53935] hover:bg-red-50"
+                }`}
               >
-                <div className="bg-white border rounded-lg overflow-hidden hover:bg-white hover:shadow-xl">
-                  <img
-                    src={product.photo_produk}
-                    alt={product.nama_produk}
-                    className="w-full h-48 object-cover rounded-md"
-                  />
-                  <div className="p-4">
-                    <h5 className="text-base font-normal text-start line-clamp-2">
-                      {product.nama_produk}
-                    </h5>
-                    <p className="text-black font-medium text-base">
-                      Rp
-                      {discountedPrice.toLocaleString("id-ID")}
-                    </p>
-                    <div className="flex items-center text-xs mt-2">
-                      <p className="text-gray-500 line-through mr-2">
-                        Rp
-                        {parseInt(product.harga_produk).toLocaleString("id-ID")}
-                      </p>
-                      <p className="text-green-500">
-                        -{parseInt(product.diskon_produk).toFixed()}% OFF
-                      </p>
-                    </div>
-                    <div className="flex items-center text-xs mt-2">
-                      <MdLocationOn />
-                      <p className="text-gray-400 mr-2">
-                        {product.lokasi_produk}
-                      </p>
-                    </div>
-                    <div className="flex items-center text-xs mt-2">
-                      <Rating rating={product.rating_produk} totalStars={5} />
-                      <p className="text-gray-400 ml-2">
-                        {product.produk_terjual} Terjual
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-        {/* End Product */}
+                Semua Kategori
+              </button>
+              {categories.map((category) => (
+                <button
+                  key={category.id_kategori}
+                  onClick={() => setSelectedCategory(category.id_kategori)}
+                  className={`flex-1 min-w-[45%] px-4 py-2 text-sm rounded-full border ${
+                    selectedCategory === category.id_kategori
+                      ? "bg-[#E53935] text-white"
+                      : "text-[#E53935] border-[#E53935] hover:bg-red-50"
+                  }`}
+                >
+                  {category.nama_kategori}
+                </button>
+              ))}
+            </div>
+          </div>
+          {/* End Category */}
 
-        {/* See More */}
-        <div className="flex items-center justify-center mt-10">
-          {!loading && visibleProducts < product.length && (
-            <button
-              onClick={handleSeeMore}
-              className="px-20 py-2 border border-[#E53935] text-[#E53935] hover:bg-red-50 rounded-full"
-            >
-              Lihat Lainnya
-            </button>
-          )}
-          {loading && <p className="px-20 py-2 text-gray-500">Memuat...</p>}
+          {/* Product */}
+          <div className="w-3/4 pl-4">
+            <div className="container flex flex-wrap">
+              {filteredProducts.slice(0, visibleProducts).map((product) => {
+                // Calculate the discount amount
+                const discountedAmount =
+                  (product.diskon_produk / 100) * product.harga_produk;
+
+                // Calculate the price after discount
+                const discountedPrice = product.harga_produk - discountedAmount;
+                return (
+                  <Link
+                    to="/detail-product"
+                    key={product.id_produk}
+                    className="w-full md:w-1/2 lg:w-1/4 p-1"
+                  >
+                    <div className="bg-white border rounded-lg overflow-hidden hover:bg-white hover:shadow-xl">
+                      <img
+                        src={product.photo_produk}
+                        alt={product.nama_produk}
+                        className="w-full h-48 object-cover rounded-md"
+                      />
+                      <div className="p-4">
+                        <h5 className="text-base font-normal text-start line-clamp-2">
+                          {product.nama_produk}
+                        </h5>
+                        <p className="text-black font-medium text-base">
+                          Rp
+                          {discountedPrice.toLocaleString("id-ID")}
+                        </p>
+                        <div className="flex items-center text-xs mt-2">
+                          <p className="text-gray-500 line-through mr-2">
+                            Rp
+                            {parseInt(product.harga_produk).toLocaleString(
+                              "id-ID"
+                            )}
+                          </p>
+                          <p className="text-green-500">
+                            -{parseInt(product.diskon_produk).toFixed()}% OFF
+                          </p>
+                        </div>
+                        <div className="flex items-center text-xs mt-2">
+                          <MdLocationOn />
+                          <p className="text-gray-400 mr-2">
+                            {product.lokasi_produk}
+                          </p>
+                        </div>
+                        <div className="flex items-center text-xs mt-2">
+                          <Rating
+                            rating={product.rating_produk}
+                            totalStars={5}
+                          />
+                          <p className="text-gray-400 ml-2">
+                            {product.produk_terjual} Terjual
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+            {/* End Product */}
+
+            {/* See More */}
+            <div className="flex items-center justify-center mt-10">
+              {!loading && visibleProducts < product.length && (
+                <button
+                  onClick={handleSeeMore}
+                  className="px-20 py-2 border border-[#E53935] text-[#E53935] hover:bg-red-50 rounded-full"
+                >
+                  Lihat Lainnya
+                </button>
+              )}
+              {loading && <p className="px-20 py-2 text-gray-500">Memuat...</p>}
+            </div>
+            {/* End See More */}
+          </div>
         </div>
-        {/* End See More */}
       </div>
 
       {/* Footer */}

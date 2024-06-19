@@ -3,9 +3,17 @@ import {
     getAllKategori, getKategoriById, addKategori, updateKategori, deleteKategori,
     getAllProduk, getProdukByID, addProduk, updateProduk, deleteProduk,
     getAllToko, getTokoByID, addToko, updateToko, deleteToko,
+    getAllCarousel, addCarousel, updateCarousel, deleteCarousel,
+    addCard,
+    getCart,
 } from '../Controller/SnackinController.js';
 
 const router = express.Router();
+// Router Carousel
+router.get('/carousel', getAllCarousel);
+router.post('/carousel', addCarousel);
+router.patch('/carousel/:id', updateCarousel);
+router.delete('/carousel/:id', deleteCarousel);
 
 // Router Kategori
 router.get('/kategori', getAllKategori);
@@ -27,5 +35,11 @@ router.get('/toko/:id_toko', getTokoByID);
 router.post('/toko', addToko);
 router.patch('/toko/:id_toko', updateToko);
 router.delete('/toko/:id_toko', deleteToko);
+
+// Router Keranjang Belanja
+router.get('/cart', getCart);
+router.post('/cart/:id_keranjang', addCard);
+// router.patch('/cart/:id_keranjang', updateCart);
+// router.delete('/cart/:id_keranjang', deleteCart);
 
 export default router;

@@ -7,9 +7,9 @@ dotenv.config();
 
 // SignUp Controller
 const signup = async (req, res) => {
-    const { username, password, email, alamat, telepon } = req.body;
+    const { username, password, email, telepon } = req.body;
 
-    if (!username || !password || !email || !alamat || !telepon) {
+    if (!username || !password || !email || !telepon) {
         return res.status(400).json({ error: 'Field wajib diisi' });
     }
 
@@ -19,21 +19,21 @@ const signup = async (req, res) => {
 
     try {
         const salt = await bcrypt.genSalt(12);
-        const hash = await bcrypt.hash(password.salt);
-        await query('insert into users(username, password, email, alamat, telepon) values (?, ?, ?, ?, ?)', [username, hash, email, alamat, telepon]);
+        const hash = await bcrypt.hash(password, salt);
+        await query('insert into users(username, password, email, telepon) values (?, ?, ?, ?)', [username, hash, email, telepon]);
 
-        return res.status(200).json({ username, hash, email, alamat, telepon });
+        return res.status(200).json({ username, hash, email, telepon });
     } catch (error) {
-        return res.status(500).json({ error: 'Terjadi kesalahan' });
+        return res.status(500).json({ error: 'Terjadi kesalahan', error });
     }
 };
 
 // SignIn Controller
 const signin = async (req, res) => {
-    const { email, password: inputPass } = req.body;
+    const { email, password } = req.body;
 
     // Validasi Input
-    if (!email || !inputPass) {
+    if (!email || !password) {
         return res.status(400).json({ error: 'Email dan Password wajib diisi' });
     }
 
@@ -51,7 +51,7 @@ const signin = async (req, res) => {
         }
 
         // Cek kecocokan Password
-        const isMatch = await bcrypt.compare(inputPass, check.password);
+        const isMatch = await bcrypt.compare(password, check.password);
         if (!isMatch) {
             return res.status(400).json({ error: 'Password salah' });
         }

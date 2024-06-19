@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { testConnection } from './Database/db.js';
 import Snackin from './Routes/Snackin.js';
+import authRoutes from './Routes/AuthRoute.js'
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(Snackin);
+app.use(authRoutes)
 
 app.listen(process.env.APP_PORT, async () => {
     await testConnection();

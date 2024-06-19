@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import axios from "axios";
 
 const Carousel = () => {
-  const carousel = [
-    {
-      imageUrl: "./Carousel/1.png",
-    },
-    {
-      imageUrl: "./Carousel/2.png",
-    },
-    {
-      imageUrl: "./Carousel/3.png",
-    },
-    {
-      imageUrl: "./Carousel/4.png",
-    },
-  ];
+  const [carousel, setCarousel] = useState([]);
+
+  useEffect(() => {
+    const fetchCarousel = async () => {
+      try {
+        const res = await axios.get(`http://localhost:3000/carousel`);
+        setCarousel(res.data.data);
+      } catch (e) {
+        console.error("Terjadi kesalahan saat mengambil Image:", e);
+      }
+    };
+    fetchCarousel();
+  }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -38,7 +38,7 @@ const Carousel = () => {
 
   return (
     <div className="carousel-container w-full mx-auto py-24 relative">
-      <div className="carousel w-full overflow-hidden relative">
+      <div className="carousel overflow-hidden relative">
         <div className="carousel-inner flex">
           <div
             className="flex transition-transform duration-500"
@@ -47,14 +47,14 @@ const Carousel = () => {
               width: `${carousel.length * 100}%`,
             }}
           >
-            {carousel.map((category, index) => (
+            {carousel.map((carousel) => (
               <div
-                key={index}
+                key={carousel}
                 className="flex-shrink-0 w-full flex justify-center items-center relative"
               >
                 <img
-                  src={category.imageUrl}
-                  alt={`Slide ${index + 1}`}
+                  src={carousel.image}
+                  alt={`Slide ${carousel + 1}`}
                   className="max-w-full max-h-[470px] rounded-2xl object-contain"
                 />
               </div>
@@ -65,11 +65,11 @@ const Carousel = () => {
           onClick={nextSlide}
           className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"
         >
-          {carousel.map((_, index) => (
+          {carousel.map((_, carousel) => (
             <div
-              key={index}
+              key={carousel}
               className={`w-2 h-2 rounded-full ${
-                index === currentIndex ? "bg-[#E53935]" : "bg-gray-300"
+                carousel === currentIndex ? "bg-[#E53935]" : "bg-gray-300"
               }`}
             />
           ))}

@@ -20,7 +20,7 @@ const StoreChoise = () => {
   return (
     <>
       {/* Store Choice */}
-      <div className="font-Poppins text-lg px-20 pt-10">
+      <div className="font-Poppins text-lg px-10 mt-10">
         <h1 className="font-medium py-4 text-2xl">Pilihan Toko</h1>
         <Link
           to="/store-profile"

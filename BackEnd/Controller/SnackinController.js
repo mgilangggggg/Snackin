@@ -1,4 +1,75 @@
 import { query } from '../Database/db.js';
+// Carousel Controller
+// Get All
+export const getAllCarousel = async (req, res) => {
+    try {
+        const results = await query(`select * from carousel`);
+        return res.status(200).json({ success: true, data: results });
+    } catch {
+        console.error('Terjadi Kesalahan');
+        return res.status(500).json({ success: false, msg: 'Terjadi kesalahan pada server' });
+    }
+};
+
+// Add
+export const addCarousel = async (req, res) => {
+    const { image } = req.body;
+
+    if (!image) {
+        return res.status(400).json({ msg: 'Field tidak boleh kosong' });
+    }
+
+    try {
+        const result = await query(`insert into carousel (image) values (?)`, [
+            image
+        ]);
+        return res.status(200).json({ success: true, data: { id: result.insertId, image } });
+    } catch (e) {
+        console.error('Terjadi kesalahan', e);
+        return res.status(500).json({ success: false, msg: 'Terjadi Kesalahan pada server' });
+    }
+}
+
+// Delete
+export const updateCarousel = async (req, res) => {
+    const { id } = req.params
+    const { image } = req.body
+
+    if (!image) {
+        return res.status(400).json({ msg: 'Field tidak boleh kosong' });
+    }
+
+    try {
+        const results = await query(`update carousel set image = ? where id = ?`, [image, id]);
+
+        if (results.affectedRows === 0) {
+            return res.status(404).json({ success: false, msg: 'Image tidak ditemukan' });
+        }
+        return res.status(200).json({ success: true, data: { id, image } });
+
+    } catch (e) {
+        console.error('Terjadi kesalahan', e);
+        return res.status(500).json({ success: false, msg: 'Terjadi kesalahan pada server' });
+    }
+};
+
+// Delete
+export const deleteCarousel = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const [result] = await query(`select * from carousel where id = ?`, [id]);
+        if (!result) {
+            return res.status(404).json({ success: false, msg: 'Image tidak ditemukan' });
+        }
+
+        await query(`delete from carousel where id = ?`, [id]);
+        return res.status(200).json({ success: true, msg: 'Image berhasil dihapus' });
+    } catch (e) {
+        console.error('Terjadi kesalahan', e);
+        return res.status(500).json({ success: false, msg: 'Terjadi kesalahan pada server' });
+    }
+};
+// End Carousel Controller
 
 // Kategori Controller
 // Get All
@@ -12,7 +83,7 @@ export const getAllKategori = async (req, res) => {
     }
 };
 
-// Get Kategori By Id
+// Get By Id
 export const getKategoriById = async (req, res) => {
     const { id_kategori } = req.params
 
@@ -33,7 +104,7 @@ export const getKategoriById = async (req, res) => {
 };
 
 
-// Add Kategori
+// Add
 export const addKategori = async (req, res) => {
     const { photo_kategori, nama_kategori } = req.body;
 
@@ -52,7 +123,7 @@ export const addKategori = async (req, res) => {
     }
 };
 
-// Update Kategori
+// Update
 export const updateKategori = async (req, res) => {
     const { id_kategori } = req.params
     const { photo_kategori, nama_kategori } = req.body
@@ -75,7 +146,7 @@ export const updateKategori = async (req, res) => {
     }
 };
 
-// Delete Kategori
+// Delete
 export const deleteKategori = async (req, res) => {
     const { id_kategori } = req.params;
     try {
@@ -94,7 +165,7 @@ export const deleteKategori = async (req, res) => {
 // End Kategori Controller
 
 // Produk Controller
-// Get All Produk
+// Get All
 export const getAllProduk = async (req, res) => {
     try {
         const result = await query(`select * from produk`);
@@ -105,7 +176,7 @@ export const getAllProduk = async (req, res) => {
     }
 };
 
-// Get Produk By Id
+// Get By Id
 export const getProdukByID = async (req, res) => {
     const { id_produk } = req.params
 
@@ -125,7 +196,7 @@ export const getProdukByID = async (req, res) => {
     }
 };
 
-// Add Produk
+// Add
 export const addProduk = async (req, res) => {
     const { photo_produk, nama_produk, harga_produk, diskon_produk, lokasi_produk, rating_produk, produk_terjual, deskripsi_produk, detail_produk, stok_produk, varian_produk, berat_produk, id_toko, id_kategori
     } = req.body;
@@ -145,7 +216,7 @@ export const addProduk = async (req, res) => {
     }
 };
 
-// Update Produk
+// Update
 export const updateProduk = async (req, res) => {
     const { id_produk } = req.params;
     const { photo_produk, nama_produk, harga_produk, diskon_produk, lokasi_produk, rating_produk, produk_terjual, deskripsi_produk, detail_produk, stok_produk, varian_produk, berat_produk } = req.body;
@@ -167,7 +238,7 @@ export const updateProduk = async (req, res) => {
     }
 }
 
-// Delete Produk
+// Delete
 export const deleteProduk = async (req, res) => {
     const { id_produk } = req.params;
     try {
@@ -186,7 +257,7 @@ export const deleteProduk = async (req, res) => {
 // End Produk Controller
 
 // Pilihan Toko Controller
-// Get All Toko
+// Get All
 export const getAllToko = async (req, res) => {
     try {
         const result = await query(`select * from toko`);
@@ -197,7 +268,7 @@ export const getAllToko = async (req, res) => {
     }
 };
 
-// Get Toko By Id
+// Get By Id
 export const getTokoByID = async (req, res) => {
     const { id_toko } = req.params
 
@@ -217,7 +288,7 @@ export const getTokoByID = async (req, res) => {
     }
 };
 
-// Add Toko
+// Add
 export const addToko = async (req, res) => {
     const { photo_toko, nama_toko, alamat_toko, deskripsi_toko, rating_toko, ulasan_toko, id_user
     } = req.body;
@@ -237,7 +308,7 @@ export const addToko = async (req, res) => {
     }
 };
 
-// Update Toko
+// Update
 export const updateToko = async (req, res) => {
     const { id_toko } = req.params;
     const { photo_toko, nama_toko, alamat_toko, deskripsi_toko, rating_toko, ulasan_toko, id_user
@@ -262,7 +333,7 @@ export const updateToko = async (req, res) => {
     }
 };
 
-// Delete Toko
+// Delete
 export const deleteToko = async (req, res) => {
     const { id_toko } = req.params;
     try {
@@ -280,3 +351,35 @@ export const deleteToko = async (req, res) => {
 };
 // End Pilihan Toko Controller
 
+// Keranjang Belanja Controller
+// Get
+export const getCart = async (req, res) => {
+    try {
+        const results = await query(`select * from keranjang_belanja`);
+        return res.status(200).json({ success: true, data: results });
+    } catch {
+        console.error('Terjadi Kesalahan');
+        return res.status(500).json({ success: false, msg: 'Terjadi kesalahan pada server' });
+    }
+};
+
+// Add
+export const addCard = async (req, res) => {
+    const { photo_produk, nama_produk, varian_produk, harga_produk, kuantitas, total_harga } = req.body;
+
+    if (!photo_produk || !nama_produk || !varian_produk || !harga_produk || !kuantitas || !total_harga) {
+        return res.status(400).json({ msg: 'Field tidak boleh kosong' });
+    }
+
+
+    try {
+        const result = await query(`insert into keranjang_belanja (photo_produk, nama_produk, varian_produk, harga_produk, kuantitas, total_harga) values (?, ?, ?, ?, ?, ?)`, [
+            photo_produk, nama_produk, varian_produk, harga_produk, kuantitas, total_harga
+        ]);
+        return res.status(200).json({ success: true, data: { id: result.insertId, photo_produk, nama_produk, varian_produk, harga_produk, kuantitas, total_harga } });
+    } catch (e) {
+        console.error('Terjadi kesalahan', e);
+        return res.status(500).json({ success: false, msg: 'Terjadi Kesalahan pada server' });
+    }
+}
+// End Keranjang Belanja Controller

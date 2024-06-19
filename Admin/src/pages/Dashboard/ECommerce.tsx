@@ -5,16 +5,21 @@ import ChartThree from '../../components/Charts/ChartThree';
 import ChartTwo from '../../components/Charts/ChartTwo';
 import ChatCard from '../../components/Chat/ChatCard';
 import DefaultLayout from '../../layout/DefaultLayout';
-import { BiDollar } from "react-icons/bi";
+import { BiDollar } from 'react-icons/bi';
 
 const ECommerce: React.FC = () => {
   return (
     <DefaultLayout>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-        <CardDataStats title="Total Keuntungan" total="Rp500.000" rate="4.35%" levelUp>
-        <div className="flex items-center">
-            <BiDollar className='w-6 h-6 fill-[#E53935] dark:fill-white' />
-        </div>
+        <CardDataStats
+          title="Total Keuntungan"
+          total="Rp500.000"
+          rate="4.35%"
+          levelUp
+        >
+          <div className="flex items-center">
+            <BiDollar className="w-6 h-6 fill-[#E53935] dark:fill-white" />
+          </div>
         </CardDataStats>
         <CardDataStats title="Jumlah Produk" total="98" rate="2.59%" levelUp>
           <svg
@@ -35,7 +40,7 @@ const ECommerce: React.FC = () => {
           </svg>
         </CardDataStats>
         <CardDataStats title="Total Pesanan" total="45" rate="0.95%" levelDown>
-        <svg
+          <svg
             className="fill-[#E53935] dark:fill-white"
             width="20"
             height="22"
@@ -57,7 +62,7 @@ const ECommerce: React.FC = () => {
           </svg>
         </CardDataStats>
         <CardDataStats title="Produk Terjual" total="225k" rate="0.43%" levelUp>
-        <svg
+          <svg
             className="fill-[#E53935] dark:fill-white"
             width="22"
             height="22"
@@ -74,7 +79,12 @@ const ECommerce: React.FC = () => {
             />
           </svg>
         </CardDataStats>
-        <CardDataStats title="Total Pengunjung" total="125k" rate="0.43%" levelUp>
+        <CardDataStats
+          title="Total Pengunjung"
+          total="125k"
+          rate="0.43%"
+          levelUp
+        >
           <svg
             className="fill-[#E53935] dark:fill-white"
             width="22"
@@ -103,7 +113,7 @@ const ECommerce: React.FC = () => {
         <ChartTwo />
       </div>
       <div className="mt-6">
-      <ChatCard />
+        <ChatCard />
       </div>
     </DefaultLayout>
   );
