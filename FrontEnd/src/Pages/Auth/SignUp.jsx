@@ -14,17 +14,25 @@ const SignUp = () => {
   const signupHandler = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("username", username);
-    formData.append("telepon", telepon);
-    formData.append("email", email);
-    formData.append("password", password);
+    // Prepare data to be sent in JSON format
+    const formData = {
+      username,
+      telepon,
+      email,
+      password
+    };
 
     try {
-      await axios.post("http://localhost:3000/signup", formData);
-      navigate.push("/home");
+      const res = await axios.post("http://localhost:3000/signup", formData, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      navigate("/home");
     } catch (e) {
-      setValidation(e.res.data);
+      if (e.response && e.response.data) {
+        setValidation(e.response.data);
+      }
     }
   };
 

@@ -20,11 +20,11 @@ const signup = async (req, res) => {
     try {
         const salt = await bcrypt.genSalt(12);
         const hash = await bcrypt.hash(password, salt);
-        await query('insert into users(username, password, email, telepon) values (?, ?, ?, ?)', [username, hash, email, telepon, 0]);
+        await query('INSERT INTO users (username, password, email, telepon) VALUES (?, ?, ?, ?)', [username, hash, email, telepon]);
 
-        return res.status(200).json({ username, hash, email, telepon });
+        return res.status(200).json({ message: 'User registered successfully' });
     } catch (error) {
-        return res.status(500).json({ error: 'Terjadi kesalahan', error });
+        return res.status(500).json({ error: 'Terjadi kesalahan', detail: error.message });
     }
 };
 
@@ -39,13 +39,13 @@ const signin = async (req, res) => {
 
     try {
         // Validasi Email
-        const [validation] = await query('select id_user from users where email=?', [email]);
+        const [validation] = await query('SELECT id_user FROM users WHERE email=?', [email]);
 
         if (!validation) {
             return res.status(400).json({ error: 'Email Anda tidak ditemukan' });
         }
 
-        const [user] = await query('select id_user, email, password from users where id_user=?', [validation.id_user]);
+        const [user] = await query('SELECT id_user, email, password FROM users WHERE id_user=?', [validation.id_user]);
         if (!user) {
             return res.status(400).json({ error: 'User tidak ditemukan' });
         }
@@ -73,7 +73,5 @@ const signin = async (req, res) => {
         return res.status(500).json({ error: 'Terjadi kesalahan' });
     }
 };
-
-// Reset Controller
 
 export { signup, signin };

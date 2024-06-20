@@ -15,8 +15,10 @@ const SignIn = () => {
         password,
       });
       console.log(res.data);
-      alert("Berhasil masuk!");
-      navigate("/home");
+      if (res.status === 200) {
+        alert("Berhasil masuk!");
+        navigate("/home");
+      }
     } catch (e) {
       console.error("Login failed", e);
       alert("Gagal masuk, silahkan coba lagi");
@@ -66,34 +68,29 @@ const SignIn = () => {
                 required
                 className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935] my-4"
               />
+              <div className="w-full flex items-center justify-between">
+                <div className="w-full flex items-center">
+                  <label className="flex items-center gap-x-2 text-sm font-poppins font-light accent-[#E53935]">
+                    <input type="checkbox" className="w-4 h-4" />
+                    Ingat Saya
+                  </label>
+                </div>
+                <Link
+                  to="/forgot"
+                  className="text-sm font-poppins font-light whitespace-nowrap"
+                >
+                  Lupa Password?
+                </Link>
+              </div>
+              <div className="w-full flex flex-col my-4">
+                <button
+                  type="submit"
+                  className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-white shadow-sm hover:text-[#E53935] hover:bg-gray-100 my-2"
+                >
+                  Masuk
+                </button>
+              </div>
             </form>
-          </div>
-
-          {/* Checkbox for 'Remember Me' and 'Forgot Password?' link */}
-          <div className="w-full flex items-center justify-between">
-            <div className="w-full flex items-center">
-              <label className="flex items-center gap-x-2 text-sm font-poppins font-light accent-[#E53935]">
-                <input type="checkbox" className="w-4 h-4" />
-                Ingat Saya
-              </label>
-            </div>
-
-            <Link
-              to="/forgot"
-              className="text-sm font-poppins font-light whitespace-nowrap"
-            >
-              Lupa Password?
-            </Link>
-          </div>
-
-          {/* SignIn button */}
-          <div className="w-full flex flex-col my-4">
-            <button
-              type="submit"
-              className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-white shadow-sm hover:text-[#E53935] hover:bg-gray-100 my-2"
-            >
-              Masuk
-            </button>
           </div>
 
           {/* Horizontal line and 'or' text */}
