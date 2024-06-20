@@ -94,7 +94,7 @@ npm run dev
 - [x] Setting Pages by `Bella`
 - [x] My Order Pages by `Aji`
 - [x] My Rating Pages by `Bella`
-- [x] Search for products in search `Bella` On Progress ⏳
+- [x] Search for products in search `Bella` On Progress
 - [ ] Shop creation form page
 
 ##### Dashbord Admin
