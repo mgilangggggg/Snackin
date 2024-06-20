@@ -1,7 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const [username, setUsername] = useState("");
+  const [telepon, setTelepon] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [validation, setValidation] = useState([]);
+
+  const navigate = useNavigate();
+
+  const signupHandler = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("telepon", telepon);
+    formData.append("email", email);
+    formData.append("password", password);
+
+    try {
+      await axios.post("http://localhost:3000/signup", formData);
+      navigate.push("/home");
+    } catch (e) {
+      setValidation(e.res.data);
+    }
+  };
+
   return (
     <main className="w-full h-screen flex items-start">
       {/* Img */}
@@ -13,7 +39,7 @@ const SignUp = () => {
         />
       </div>
 
-      <div className="w-1/2  bg-[#e8d5d5] flex flex-col p-5 justify-between items-center">
+      <div className="w-1/2 bg-[#e8d5d5] flex flex-col p-5 justify-between items-center">
         <div className="w-full flex flex-col max-w-[400px]">
           <div className="w-full flex flex-col mb-2">
             <h3 className="text-3xl font-poppins font-medium mb-2">Daftar!</h3>
@@ -24,58 +50,78 @@ const SignUp = () => {
 
           {/* Input field for username, email, no.telepon and password */}
           <div className="w-full flex flex-col">
-            <form className="space-y-6">
+            <form onSubmit={signupHandler} className="space-y-6">
               <input
-                type="username"
+                type="text"
                 placeholder="Username"
                 id="username"
                 name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
                 className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935]"
               />
-
+              {validation.username && (
+                <div className="bg-red-500 text-white font-bold rounded-lg p-4">
+                  {validation.username[0]}
+                </div>
+              )}
               <input
                 type="tel"
                 placeholder="No. Telp"
                 id="phoneNumber"
                 name="phoneNumber"
+                value={telepon}
+                onChange={(e) => setTelepon(e.target.value)}
                 required
                 className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935]"
               />
-
+              {validation.telepon && (
+                <div className="bg-red-500 text-white font-bold rounded-lg p-4">
+                  {validation.telepon[0]}
+                </div>
+              )}
               <input
                 type="email"
                 placeholder="Email"
                 id="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935] my-4"
               />
-
+              {validation.email && (
+                <div className="bg-red-500 text-white font-bold rounded-lg p-4">
+                  {validation.email[0]}
+                </div>
+              )}
               <input
                 type="password"
                 placeholder="Password"
                 id="password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
                 className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935]"
               />
+              {validation.password && (
+                <div className="bg-red-500 text-white font-bold rounded-lg p-4">
+                  {validation.password[0]}
+                </div>
+              )}
+              <button
+                type="submit"
+                className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-white shadow-sm hover:text-[#E53935] hover:bg-gray-100 my-2"
+              >
+                Daftar
+              </button>
             </form>
           </div>
 
-          {/* SignUp button */}
-          <div className="w-full flex flex-col my-4">
-            <Link
-              to="/signin"
-              type="submit"
-              className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-white shadow-sm hover:text-[#E53935] hover:bg-gray-100 my-2"
-            >
-              Daftar
-            </Link>
-          </div>
-
           {/* Horizontal line and 'or' text */}
-          <div className="w-full flex items-center justify-center relative py-2">
+          <div className="w-full flex items-center justify-center relative py-3">
             <div className="w-full h-[1px] bg-black"></div>
             <p className="text-sm font-light font-poppins absolute text-black/80 bg-[#e8d5d5]">
               atau

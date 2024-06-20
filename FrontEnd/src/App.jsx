@@ -18,7 +18,7 @@ import Forum from "./Pages/Forum";
 import DetailProduct from "./Pages/DetailProduct";
 import OrderCompletePage from "./Pages/OrderCompletePage";
 import OrderDetail from "./Pages/OrderDetail";
-import StoreProfile from "./Pages/StoreProfile";
+import ShopProducts from "./Pages/ShopProducts";
 import NotFound from "./Pages/404/NotFound";
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
         <Route path="/detail-product" element={<DetailProduct />} />
         <Route path="/order-detail" element={<OrderDetail />} />
         <Route path="/order-complete-page" element={<OrderCompletePage />} />
-        <Route path="/store-profile" element={<StoreProfile />} />
+        <Route path="/shop-product" element={<ShopProducts />} />
 
         {/* 404 Not Found */}
         <Route path="*" element={<NotFound />} />

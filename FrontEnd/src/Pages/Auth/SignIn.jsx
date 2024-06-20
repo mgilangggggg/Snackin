@@ -1,7 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:3000/signin", {
+        email,
+        password,
+      });
+      console.log(res.data);
+      alert("Berhasil masuk!");
+      navigate("/home");
+    } catch (e) {
+      console.error("Login failed", e);
+      alert("Gagal masuk, silahkan coba lagi");
+    }
+  };
+
   return (
     <main className="flex flex-row-reverse w-full h-screen">
       {/* Img */}
@@ -24,25 +45,28 @@ const SignIn = () => {
 
           {/* Input field for email and password */}
           <div className="flex flex-col w-full">
-            <div>
+            <form onSubmit={handleSubmit}>
               <input
                 type="email"
                 placeholder="Email"
                 id="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935]"
               />
-            </div>
-
-            <input
-              type="password"
-              placeholder="Password"
-              id="password"
-              name="password"
-              required
-              className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935] my-4"
-            />
+              <input
+                type="password"
+                placeholder="Password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-[#E53935] my-4"
+              />
+            </form>
           </div>
 
           {/* Checkbox for 'Remember Me' and 'Forgot Password?' link */}
@@ -64,13 +88,12 @@ const SignIn = () => {
 
           {/* SignIn button */}
           <div className="w-full flex flex-col my-4">
-            <Link
-              to="/home"
+            <button
               type="submit"
               className="w-full bg-[#E53935] border border-gray-300 rounded-lg p-2 text-center flex items-center justify-center font-poppins font-medium text-white shadow-sm hover:text-[#E53935] hover:bg-gray-100 my-2"
             >
               Masuk
-            </Link>
+            </button>
           </div>
 
           {/* Horizontal line and 'or' text */}

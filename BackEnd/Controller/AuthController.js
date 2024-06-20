@@ -20,7 +20,7 @@ const signup = async (req, res) => {
     try {
         const salt = await bcrypt.genSalt(12);
         const hash = await bcrypt.hash(password, salt);
-        await query('insert into users(username, password, email, telepon) values (?, ?, ?, ?)', [username, hash, email, telepon]);
+        await query('insert into users(username, password, email, telepon) values (?, ?, ?, ?)', [username, hash, email, telepon, 0]);
 
         return res.status(200).json({ username, hash, email, telepon });
     } catch (error) {
@@ -51,7 +51,7 @@ const signin = async (req, res) => {
         }
 
         // Cek kecocokan Password
-        const isMatch = await bcrypt.compare(password, check.password);
+        const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({ error: 'Password salah' });
         }
