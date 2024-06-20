@@ -95,6 +95,7 @@ npm run dev
 - [x] My Order Pages by `Aji`
 - [x] My Rating Pages by `Bella`
 - [x] Search for products in search `Bella` On Progress ⏳
+- [ ] Shop creation form page
 
 ##### Dashbord Admin
 - [x] Landing Pages by `M. Gilang`
@@ -113,8 +114,9 @@ npm run dev
 - [X] <a href="https://drive.google.com/file/d/1sBeBkDvYuuJJgRMuitXpTHM3keQIP5Ki/view?usp=sharing">ERD design</a> by `M. Gilang`
 - [x] Database by `M. Gilang`
 - [x] Express: Controller, Query, Routing by `M. Gilang`
-- [ ] Express: Middleware, Multer, Handling Error by `M. Gilang` On Progree ⏳
-- [ ] Authentication by `M. Gilang` On Progree ⏳
+- [x] Express: Middleware, Multer, Handling Error by `M. Gilang`
+- [x] Authentication Users: SignUp, SignIn by `M. Gilang`
+- [ ] Authentication Dashboard Admin
 - [ ] Dashboard Admin Toko: CRUD: Create, Read, Update, Delete
 
 ### Our Team
