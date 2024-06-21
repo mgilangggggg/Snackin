@@ -7,32 +7,41 @@ const SignUp = () => {
   const [telepon, setTelepon] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [validation, setValidation] = useState([]);
+  const [validation, setValidation] = useState({});
+  const [popupMessage, setPopupMessage] = useState("");
+  const [popupVisible, setPopupVisible] = useState(false);
 
   const navigate = useNavigate();
 
   const signupHandler = async (e) => {
     e.preventDefault();
 
-    // Prepare data to be sent in JSON format
     const formData = {
       username,
       telepon,
       email,
-      password
+      password,
     };
 
     try {
-      const res = await axios.post("http://localhost:3000/signup", formData, {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      });
-      navigate("/home");
+      const res = await axios.post("http://localhost:3000/signup", formData);
+      setPopupMessage("Berhasil Daftar");
+      setPopupVisible(true);
+      setTimeout(() => {
+        setPopupVisible(false);
+        navigate("/signin");
+      }, 1100);
     } catch (e) {
       if (e.response && e.response.data) {
         setValidation(e.response.data);
+        setPopupMessage("Password, maksimal harus 8 karacter");
+      } else {
+        setPopupMessage("Gagal Daftar, terjadi kesalahan");
       }
+      setPopupVisible(true);
+      setTimeout(() => {
+        setPopupVisible(false);
+      }, 1000);
     }
   };
 
@@ -42,7 +51,7 @@ const SignUp = () => {
       <div className="relative w-1/2 h-full flex flex-col">
         <img
           src="./Auth/SignUp.png"
-          alt="SignIn"
+          alt="SignUp"
           className="w-full h-full object-cover"
         />
       </div>
@@ -162,7 +171,7 @@ const SignUp = () => {
             Daftar dengan Google
           </Link>
 
-          {/* SignUp link */}
+          {/* SignIn link */}
           <div className="w-full flex items-center justify-center my-4">
             <p className="text-sm font-poppins text-[#060606]">
               Sudah memiliki akun?
@@ -176,6 +185,14 @@ const SignUp = () => {
           </div>
         </div>
       </div>
+
+      {popupVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-4 rounded-lg shadow-lg">
+            <p>{popupMessage}</p>
+          </div>
+        </div>
+      )}
     </main>
   );
 };

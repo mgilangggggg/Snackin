@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [popupMessage, setPopupMessage] = useState("");
+  const [popupVisible, setPopupVisible] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -15,13 +17,21 @@ const SignIn = () => {
         password,
       });
       console.log(res.data);
-      if (res.status === 200) {
-        alert("Berhasil masuk!");
+      setPopupMessage("Berhasil masuk!");
+      setPopupVisible(true);
+      setTimeout(() => {
+        setPopupVisible(false);
         navigate("/home");
-      }
+      }, 1100);
     } catch (e) {
-      console.error("Login failed", e);
-      alert("Gagal masuk, silahkan coba lagi");
+      if (e.response) {
+        setPopupMessage("Email atau password salah.");
+      }
+
+      setPopupVisible(true);
+      setTimeout(() => {
+        setPopupVisible(false);
+      }, 1000);
     }
   };
 
@@ -141,6 +151,14 @@ const SignIn = () => {
           </div>
         </div>
       </div>
+
+      {popupVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-4 rounded-lg shadow-lg">
+            <p>{popupMessage}</p>
+          </div>
+        </div>
+      )}
     </main>
   );
 };
