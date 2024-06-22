@@ -23,7 +23,7 @@ const StoreChoise = () => {
       <div className="font-Poppins text-lg px-10 mt-10">
         <h1 className="font-medium py-4 text-2xl">Pilihan Toko</h1>
         <Link
-          to="/store-profile"
+          to="/shop-product"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5"
         >
           {toko.map((toko) => (

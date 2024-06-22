@@ -34,7 +34,7 @@ const Product = () => {
         const res = await axios.get(`http://localhost:3000/kategori`);
         setCategories(res.data.data);
       } catch (e) {
-        console.error("Terjadi kesalahan saat mengambil Kategori:", e);
+        console.error("Terjadi kesalahan saat mengambil Data:", e);
       }
     };
 
@@ -62,7 +62,6 @@ const Product = () => {
             <h1 className="font-medium py-4 text-2xl">Kategori</h1>
             <div className="flex flex-wrap gap-2">
               <button
-                onClick={() => setSelectedCategory("")}
                 className={`flex-1 min-w-[45%] px-4 py-2 text-sm rounded-full border ${
                   selectedCategory === ""
                     ? "bg-[#E53935] text-white"

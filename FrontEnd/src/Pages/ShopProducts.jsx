@@ -19,7 +19,7 @@ const ShopProducts = () => {
         const res = await axios.get(`http://localhost:3000/toko/2`);
         setToko(res.data.data);
       } catch (e) {
-        console.error("Terjadi kesalahan saat mengambil Toko");
+        console.error("Terjadi kesalahan saat mengambil Data Toko");
       }
     };
 
@@ -43,7 +43,7 @@ const ShopProducts = () => {
           return [...prevProducts, ...newProducts];
         });
       } catch (e) {
-        console.error("Terjadi kesalahan saat mengambil Produk:", e);
+        console.error("Terjadi kesalahan saat mengambil Data Produk:", e);
       }
       setLoading(false);
     };

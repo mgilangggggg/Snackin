@@ -20,7 +20,7 @@ const CategoryProduct = () => {
   return (
     <>
       {/* Category Product*/}
-      <div className="font-Poppins text-lg px-10">
+      <div key={category.id_kategori} className="font-Poppins text-lg px-10">
         <h1 className="font-medium py-4 text-2xl">Kategori</h1>
         <Link
           to="/product"

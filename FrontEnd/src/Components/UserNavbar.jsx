@@ -1,14 +1,28 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { AiOutlineClose, AiOutlineMenuUnfold } from "react-icons/ai";
+import axios from "axios";
 
 const UserNavbar = () => {
   const [menu, setMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await axios.get(`http://localhost:3000/signin`);
+        setUser(res.data.data);
+      } catch (e) {
+        console.error("Terjadi kesalahan saat mengambil Users");
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   const handleChange = () => {
     setMenu(!menu);
@@ -30,8 +44,8 @@ const UserNavbar = () => {
           <Logo />
           {/* End Logo */}
 
-          {/* UserNavbar*/}
-          <div className="hidden md:flex flex-row items-center font-Poppins text-base  gap-4">
+          {/* UserNavbar */}
+          <div className="hidden md:flex flex-row items-center font-Poppins text-base gap-4">
             <Link to="/home" className="text-white hover:text-gray-300">
               Beranda
             </Link>
@@ -69,7 +83,7 @@ const UserNavbar = () => {
                   onClick={toggleDropdown}
                 >
                   <div className="flex bg-[#E53935] text-white rounded-full items-center size-8 ">
-                    <img src="Avatar/Avatar1.png" alt="" />
+                    <img src="Avatar/Avatar.png" alt="" />
                   </div>
                 </button>
               </div>
@@ -81,59 +95,62 @@ const UserNavbar = () => {
                   aria-orientation="vertical"
                   aria-labelledby="menu-button"
                 >
-                  <div className="py-1" role="none">
-                    <a className="flex items-center px-4 py-2 text-sm text-gray-700">
-                      <img
-                        src="Avatar/Avatar1.png"
-                        alt=""
-                        className="w-8 h-8 mr-2"
-                      />
-                      Alleia
-                    </a>
-                    <hr />
-                    <Link
-                      to="/myprofile"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                    >
-                      Profile Saya
-                    </Link>
-                    <Link
-                      to="/myorder"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                    >
-                      Pesanan Saya
-                    </Link>
-                    <Link
-                      to="/myrating"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                    >
-                      Penilaian Saya
-                    </Link>
-                    <Link
-                      to="http://localhost:5174/auth/signin"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                    >
-                      Toko Saya
-                    </Link>
-                    <Link
-                      to="/setting"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                    >
-                      Pengaturan
-                    </Link>
-                    <Link
-                      to="/"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                    >
-                      Keluar
-                    </Link>
-                  </div>
+                  {user.map((user) => (
+                    <div key={user.id_user} className="py-1">
+                      <a className="flex items-center px-4 py-2 text-sm text-gray-700">
+                        <img
+                          src="Avatar/Avatar.png"
+                          alt=""
+                          className="w-8 h-8 mr-2"
+                        />
+                        {user.username}
+                      </a>
+                      <hr />
+                    </div>
+                  ))}
+
+                  <Link
+                    to="/myprofile"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    Profile Saya
+                  </Link>
+                  <Link
+                    to="/myorder"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    Pesanan Saya
+                  </Link>
+                  <Link
+                    to="/myrating"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    Penilaian Saya
+                  </Link>
+                  <Link
+                    to="http://localhost:5174/auth/signin"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    Toko Saya
+                  </Link>
+                  <Link
+                    to="/setting"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    Pengaturan
+                  </Link>
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    Keluar
+                  </Link>
                 </div>
               )}
             </div>

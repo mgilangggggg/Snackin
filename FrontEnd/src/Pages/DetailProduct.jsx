@@ -298,17 +298,6 @@ const DetailProduct = () => {
               >
                 Beli Sekarang
               </Link>
-
-              <button onClick={addToCart}>Tambah ke Keranjang</button>
-              {showToast && (
-                <div className="toast">Produk ditambahkan ke keranjang!</div>
-              )}
-              {/* <Link
-                className="bg-gray-200 text-gray-700 py-2 px-4 rounded-lg"
-                onClick={addToCart}
-              >
-                Masukkan Keranjang
-              </Link> */}
             </div>
 
             <div className="flex items-center mt-4">
@@ -405,7 +394,7 @@ const DetailProduct = () => {
                   key={product.productId}
                   className="w-full md:w-1/2 lg:w-1/6 p-1"
                 >
-                  <div className="bg-white border rounded-lg overflow-hidden py-2 hover:bg-white hover:shadow-xl">
+                  <div className="bg-white border rounded-lg overflow-hidden hover:bg-white hover:shadow-xl">
                     <img
                       src={product.productImage}
                       alt={product.productName}
