@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
 import DefaultLayout from '../layout/DefaultLayout';
+import axios from 'axios';
 
 interface Product {
   name: string;
@@ -21,7 +22,11 @@ const AddProductForm: React.FC = () => {
     imageUrl: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
     setProduct((prev) => ({ ...prev, [name]: value }));
   };
@@ -33,108 +38,133 @@ const AddProductForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission (e.g., send the product data to the backend)
-    console.log('Product submitted:', product);
+    try {
+      const response = await axios.post(
+        'http://localhost:3000/produk',
+        product,
+      );
+      console.log('Product submitted:', response.data);
+      // Optionally reset the form or navigate to another page
+    } catch (error) {
+      console.error('Error submitting product:', error);
+    }
   };
 
-    return (
-        <DefaultLayout>
-        <div className="mx-auto max-w-270">
-          <Breadcrumb pageName="Tambah Produk" />
-    <div className="p-5">
-      <h1 className="text-xl font-bold mb-5">Tambah Produk</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-        <div className="flex items-center space-x-4">
-          <div className="w-32 h-32 bg-gray-200 flex justify-center items-center rounded-md">
-            <label htmlFor="imageUpload" className="cursor-pointer">
-              {product.imageUrl ? (
-                <img src={product.imageUrl} alt="Product" className="w-full h-full object-cover rounded-md" />
-              ) : (
-                <span className="text-4xl">+</span>
-              )}
-            </label>
-            <input
-              type="file"
-              id="imageUpload"
-              accept="image/*"
-              className="hidden"
-              onChange={handleImageChange}
-            />
-          </div>
-          <div className="flex-1 space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Nama Produk</label>
-              <input
-                type="text"
-                name="name"
-                value={product.name}
-                onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                placeholder="Input"
-              />
+  return (
+    <DefaultLayout>
+      <div className="mx-auto max-w-270">
+        <Breadcrumb pageName="Tambah Produk" />
+        <div className="p-5">
+          <h1 className="text-xl font-bold mb-5">Tambah Produk</h1>
+          <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+            <div className="flex items-center space-x-4">
+              <div className="w-32 h-32 bg-gray-200 flex justify-center items-center rounded-md">
+                <label htmlFor="imageUpload" className="cursor-pointer">
+                  {product.imageUrl ? (
+                    <img
+                      src={product.imageUrl}
+                      alt="Product"
+                      className="w-full h-full object-cover rounded-md"
+                    />
+                  ) : (
+                    <span className="text-4xl">+</span>
+                  )}
+                </label>
+                <input
+                  type="file"
+                  id="imageUpload"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={handleImageChange}
+                />
+              </div>
+              <div className="flex-1 space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Nama Produk
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={product.name}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                    placeholder="Input"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Harga Produk
+                  </label>
+                  <input
+                    type="number"
+                    name="price"
+                    value={product.price}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                    placeholder="Input"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Kategori Produk
+                  </label>
+                  <select
+                    name="category"
+                    value={product.category}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                  >
+                    <option value="" disabled>
+                      Pilih Kategori
+                    </option>
+                    <option value="Keripik">Keripik</option>
+                    <option value="Kue Kering">Kue Kering</option>
+                    <option value="Kerupuk">Kerupuk</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Stok Produk
+                  </label>
+                  <input
+                    type="number"
+                    name="stock"
+                    value={product.stock}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                    placeholder="Input"
+                  />
+                </div>
+              </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700">Harga Produk</label>
-              <input
-                type="number"
-                name="price"
-                value={product.price}
+              <label className="block text-sm font-medium text-gray-700">
+                Deskripsi Produk
+              </label>
+              <textarea
+                name="description"
+                value={product.description}
                 onChange={handleChange}
                 className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                placeholder="Input"
-              />
+                rows={4}
+                placeholder="Tulis Deskripsi"
+              ></textarea>
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Kategori Produk</label>
-              <select
-                name="category"
-                value={product.category}
-                onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                className="bg-red-500 text-white px-4 py-2 rounded"
               >
-                <option value="" disabled>
-                  Pilih Kategori
-                </option>
-                <option value="Kategori 1">Keripik</option>
-                <option value="Kategori 2">Kue Kering</option>
-                <option value="Kategori 3">Kerupuk</option>
-              </select>
+                Simpan
+              </button>
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Stok Produk</label>
-              <input
-                type="number"
-                name="stock"
-                value={product.stock}
-                onChange={handleChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                placeholder="Input"
-              />
-            </div>
-          </div>
+          </form>
         </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Deskripsi Produk</label>
-          <textarea
-            name="description"
-            value={product.description}
-            onChange={handleChange}
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            rows={4}
-            placeholder="Tulis Deskripsi"
-          ></textarea>
-        </div>
-        <div className="flex justify-end">
-          <button type="submit" className="bg-red-500 text-white px-4 py-2 rounded">
-            Simpan
-          </button>
-        </div>
-      </form>
-                </div>
-                </div>
-                </DefaultLayout>
+      </div>
+    </DefaultLayout>
   );
 };
 
