@@ -74,4 +74,35 @@ const signin = async (req, res) => {
     }
 };
 
+// Get SignIn
+export const getUsers = async (req, res) => {
+    try {
+        const results = await query(`select * from users`);
+        return res.status(200).json({ success: true, data: results });
+    } catch {
+        console.error('Terjadi Kesalahan');
+        return res.status(500).json({ success: false, msg: 'Terjadi kesalahan pada server' });
+    }
+};
+
+// Get By Id
+// export const getUserById = async (req, res) => {
+//     const { id_user } = req.params
+
+//     try {
+//         const results = await query(`select * from users where id_user = ?`, [id_user]);
+
+//         if (results.length === 0) {
+//             return res.status(404).json({ success: false, msg: 'Kategori tidak ditemukan' });
+//         }
+
+//         const user = results[0];
+
+//         return res.status(200).json({ success: true, data: user })
+//     } catch (e) {
+//         console.error('Terjadi kesalahan', e);
+//         return res.status(500).json({ success: false, msg: 'Terjadi kesalahan pada server' });
+//     }
+// };
+
 export { signup, signin };
