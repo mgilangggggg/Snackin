@@ -4,8 +4,8 @@ import {
     getAllProduk, getProdukByID, addProduk, updateProduk, deleteProduk,
     getAllToko, getTokoByID, addToko, updateToko, deleteToko,
     getAllCarousel, addCarousel, updateCarousel, deleteCarousel,
-    addCard,
-    getCart,
+    addCard, getCart,
+    getDetailProduk,
 } from '../Controller/SnackinController.js';
 
 const router = express.Router();
@@ -41,5 +41,9 @@ router.get('/cart', getCart);
 router.post('/cart/:id_keranjang', addCard);
 // router.patch('/cart/:id_keranjang', updateCart);
 // router.delete('/cart/:id_keranjang', deleteCart);
+
+// Route Detail Produk
+router.get('/detail-produk', getDetailProduk);
+
 
 export default router;

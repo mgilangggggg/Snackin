@@ -5,6 +5,7 @@ import UserFooter from "../Components/UserFooter";
 import Rating from "../Components/Rating";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
+import { FaCartPlus } from "react-icons/fa";
 
 const DetailProduct = () => {
   const product = {
@@ -50,7 +51,7 @@ const DetailProduct = () => {
   const productReviews = [
     {
       id: 1,
-      avatar: "./Avatar/Avatar1.png",
+      avatar: "./Avatar/Avatar.png",
       name: "Sarah",
       image: "./Product/Basreng.png",
       rating: 5,
@@ -63,7 +64,7 @@ const DetailProduct = () => {
     },
     {
       id: 2,
-      avatar: "./Avatar/Avatar2.png",
+      avatar: "./Avatar/Avatar.png",
       name: "Kelvin",
       image: "./Product/Basreng-Sajodo.png",
       rating: 4,
@@ -298,6 +299,13 @@ const DetailProduct = () => {
               >
                 Beli Sekarang
               </Link>
+
+              <button
+                onClick={addToCart}
+                className="bg-red-500 text-white py-2 px-4 rounded-lg"
+              >
+                <FaCartPlus />
+              </button>
             </div>
 
             <div className="flex items-center mt-4">

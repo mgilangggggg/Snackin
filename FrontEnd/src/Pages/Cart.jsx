@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Nav from "../Components/UserNavbar";
 import Footer from "../Components/Footer";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Cart = () => {
-  // Initial state for items and their quantities
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      name: "Basreng Pedas Viral",
-      variation: "Pedas Manis/250 gr",
-      price: 15000,
-      quantity: 1,
-      image: "./Product/Basreng-Sajodo.png",
-    },
-  ]);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchItem = async () => {
+      try {
+        const res = await axios.get(`http://localhost:3000/cart`);
+        setItems(res.data.data);
+      } catch (e) {
+        console.error("Terjadi kesalahan saat mengambil Produk:", e);
+      }
+    };
+    fetchItem();
+  }, []);
 
   const [isPaymentVerified, setIsPaymentVerified] = useState(false);
 
@@ -23,15 +26,19 @@ const Cart = () => {
     setItems(
       items.map((item) =>
         item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + delta) }
+          ? { ...item, kuantitas: Math.max(1, item.kuantitas + delta) }
           : item
       )
     );
   };
 
+  const handleRemoveItem = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
   const calculateTotal = () => {
     const subtotal = items.reduce(
-      (total, item) => total + item.price * item.quantity,
+      (total, item) => total + item.harga_produk * item.kuantitas,
       0
     );
     const shipping = items.length * 3500;
@@ -64,21 +71,30 @@ const Cart = () => {
               <tr key={item.id}>
                 <td className="px-4 py-2 text-justify">
                   <div className="flex justify-between">
-                    <input type="checkbox" className="w-4 h-4 mr-4" />
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-28 h-28"
-                    />
+                    <div className="flex items-start">
+                      <input type="checkbox" className="w-4 h-4 mr-4 mt-1" />
+                      <img
+                        src={item.photo_produk}
+                        alt={item.nama_produk}
+                        className="w-28 h-28 mr-4"
+                      />
+                      <button
+                        onClick={() => handleRemoveItem(item.id)}
+                        className="text-red-500 hover:text-red-700 focus:outline-none"
+                      >
+                        &times;
+                      </button>
+                    </div>
+
                     <div className="flex-1 px-10">
-                      <h2 className="text-lg font">{item.name}</h2>
-                      <p className="text-gray-600">{item.variation}</p>
+                      <h2 className="text-lg font">{item.nama_produk}</h2>
+                      <p className="text-gray-600">{item.variasi_produk}</p>
                     </div>
                   </div>
                 </td>
                 <td className="px-4 py-2 text-start">
                   <p className="text-lg font-bold">
-                    Rp. {item.price.toLocaleString()}
+                    Rp. {item.harga_produk.toLocaleString()}
                   </p>
                 </td>
                 <td className="px-4 py-2 text-center">
@@ -89,7 +105,7 @@ const Cart = () => {
                     >
                       -
                     </button>
-                    <span>{item.quantity}</span>
+                    <span>{item.kuantitas}</span>
                     <button
                       onClick={() => handleQuantityChange(item.id, 1)}
                       className="px-2 py-1 bg-gray-200"
@@ -100,7 +116,7 @@ const Cart = () => {
                 </td>
                 <td className="px-4 py-2 text-start">
                   <p className="text-lg font-bold">
-                    Rp. {(item.price * item.quantity).toLocaleString()}
+                    Rp. {(item.harga_produk * item.kuantitas).toLocaleString()}
                   </p>
                 </td>
               </tr>

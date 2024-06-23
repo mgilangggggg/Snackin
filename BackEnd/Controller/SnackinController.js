@@ -383,3 +383,15 @@ export const addCard = async (req, res) => {
     }
 }
 // End Keranjang Belanja Controller
+
+// Detail Produk Controller
+// Get
+export const getDetailProduk = async (req, res) => {
+    try {
+        const results = await query(`select * from detail_produk`);
+        return res.status(200).json({ success: true, data: results });
+    } catch {
+        console.error('Terjadi Kesalahan');
+        return res.status(500).json({ success: false, msg: 'Terjadi kesalahan pada server' });
+    }
+};
