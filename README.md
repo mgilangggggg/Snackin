@@ -115,9 +115,10 @@ npm run dev
 - [x] Database by `M. Gilang`
 - [x] Express: Controller, Query, Routing by `M. Gilang`
 - [x] Express: Middleware, Multer, Handling Error by `M. Gilang`
-- [x] Authentication Users: SignUp, SignIn by `M. Gilang`
+- [x] Authentication Users Interface: SignUp, SignIn by `M. Gilang`
 - [ ] Authentication Dashboard Admin
 - [ ] Dashboard Admin Toko: CRUD: Create, Read, Update, Delete
+- [X] Hosting by `M. Gilang`
 
 ### Our Team
 
