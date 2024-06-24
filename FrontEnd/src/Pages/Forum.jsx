@@ -33,7 +33,7 @@ const Forum = () => {
       user: {
         name: "inijijel",
         role: "Pembeli",
-        avatar: "./Avatar/Avatar1.png",
+        avatar: "./Avatar/Avatar.png",
       },
       content: "Ada rekomendasi toko yang jual nastar premium gak guyss??",
       comments: 4,
@@ -44,7 +44,7 @@ const Forum = () => {
       user: {
         name: "ciliwendy",
         role: "Pembeli",
-        avatar: "./Avatar/Avatar2.png",
+        avatar: "./Avatar/Avatar.png",
       },
       content:
         "haloo, mau nanya dong guys misal beli produk dalam jumlah banyak tuh pengirimannya aman gak yah? Mau dijual lagi soalnya, yang udah pernah beli banyak komen dong, makasii",
