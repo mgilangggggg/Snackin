@@ -18,7 +18,7 @@ const Product = () => {
     const fetchAllProducts = async (page) => {
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:3000/produk?page${page}`);
+        const res = await axios.get(`http://localhost:3000/produk`);
         setProduct((prevProduct) => [...prevProduct, ...res.data.data]);
       } catch (e) {
         console.error("Terjadi kesalahan saat mengambil Produk:", e);
@@ -102,7 +102,7 @@ const Product = () => {
                     key={product.id_produk}
                     className="w-full md:w-1/2 lg:w-1/4 p-1"
                   >
-                    <Link to={`/detail-product/${product.id_produk}`}>
+                    <Link to={`/detail-product`}>
                       <div className="bg-white border rounded-lg overflow-hidden hover:bg-white hover:shadow-xl">
                         <img
                           src={product.photo_produk}
